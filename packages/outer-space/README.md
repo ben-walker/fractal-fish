@@ -21,6 +21,6 @@
 | Problem Area | Solution |
 | --- | --- |
 | Environment | **Vue.js** |
-| Framework | Vuetify? |
+| Framework | Vuetify/Buefy/Vue Material? |
 | State management | **Vuex** |
 | Routing | **Vue-router** |

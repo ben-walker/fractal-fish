@@ -1,5 +1,9 @@
 # fractal-fish
 
+## Overview
+
+Online poker.
+
 ## Tech
 
 > **Bold** items are final

@@ -1,4 +1,4 @@
-# fractal-fish
+# fractal-fish :tropical_fish:
 
 ## Overview
 

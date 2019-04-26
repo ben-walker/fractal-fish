@@ -1,14 +1,14 @@
 # fractal-fish :tropical_fish:
 
-## Overview
+## Overview :earth_americas:
 
 Online poker.
 
-## Tech
+## Tech :wrench:
 
 > **Bold** items are final
 
-### Backend Stack
+### Backend Stack :cloud:
 
 | Problem Area | Solution |
 | --- | --- |
@@ -20,7 +20,7 @@ Online poker.
 | Communication | socket.io |
 | Authentication | jwt/passport? |
 
-### Frontend Stack
+### Frontend Stack :computer:
 
 | Problem Area | Solution |
 | --- | --- |

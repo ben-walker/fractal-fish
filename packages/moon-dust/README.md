@@ -1,22 +1,22 @@
 # fractal-fish
 
-## Backend Tech Stack
+## Tech
 
 > **Bold** items are final
+
+### Backend Stack
 
 | Problem Area | Solution |
 | --- | --- |
 | Environment | **Node.js** |
 | Framework | **Express** |
 | API | GraphQL |
-| Database | MongoDB |
-| ORM | Mongoose |
+| Database | **MongoDB** |
+| ORM | **Mongoose** |
 | Communication | socket.io |
 | Authentication | jwt/passport? |
 
-## Frontend Tech Stack
-
-> **Bold** items are final
+### Frontend Stack
 
 | Problem Area | Solution |
 | --- | --- |

@@ -14,10 +14,9 @@ Online poker.
 | --- | --- |
 | Environment | **Node.js** |
 | Framework | **Express** |
-| API | GraphQL/Apollo? |
+| API | **GraphQL/Apollo** |
 | Database | **MongoDB** |
 | ORM | **Mongoose** |
-| Communication | socket.io |
 | Authentication | jwt/passport? |
 
 ### Frontend Stack
@@ -25,6 +24,6 @@ Online poker.
 | Problem Area | Solution |
 | --- | --- |
 | Environment | **Vue.js** |
-| Framework | Vuetify/Buefy/Vue Material? |
+| Framework | **Vuetify** |
 | State management | **Vuex** |
 | Routing | **Vue-router** |

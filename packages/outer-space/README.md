@@ -14,7 +14,7 @@ Online poker.
 | --- | --- |
 | Environment | **Node.js** |
 | Framework | **Express** |
-| API | GraphQL |
+| API | GraphQL/Apollo? |
 | Database | **MongoDB** |
 | ORM | **Mongoose** |
 | Communication | socket.io |

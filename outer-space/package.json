@@ -21,6 +21,9 @@
     "@babel/runtime": "^7.4.4",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2"
+    "eslint-plugin-import": "^2.17.2",
+    "gulp": "^4.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^5.0.0"
   }
 }

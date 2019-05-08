@@ -12,9 +12,9 @@ Online poker.
 
 | Problem Area | Solution |
 | --- | --- |
-| Environment | **Node.js** |
-| Framework | **Express** |
-| API | **GraphQL/Apollo** |
+| Environment | **[node](https://github.com/nodejs/node)** |
+| Framework | **[express](https://github.com/expressjs/express)** |
+| API | **[apollo-server](https://github.com/apollographql/apollo-server)** |
 | Database | **MongoDB** |
 | ORM | **Mongoose** |
 | Authentication | jwt/passport? |
@@ -23,16 +23,16 @@ Online poker.
 
 | Problem Area | Solution |
 | --- | --- |
-| Environment | **Vue.js** |
-| Framework | **Vuetify** |
-| State management | **Vuex** |
-| Routing | **Vue-router** |
+| Environment | **[react](https://github.com/facebook/react/)** |
+| Framework | [material-ui](https://material-ui.com/)/[grommet](https://v2.grommet.io/) |
+| State management | **[redux](https://github.com/reduxjs/redux)** |
+| Routing | ? |
 
-### Repo Tools
+### Tooling
 
 | Problem Area | Solution |
 | --- | --- |
-| Repo management | Lerna |
+| Repo management | Lerna (possibly overkill) |
 | Package manager | **npm** |
 
 ## Design

@@ -1,3 +1,4 @@
+import * as nodemonWebpackPlugin from 'nodemon-webpack-plugin';
 import * as path from 'path';
 import * as tslintWebpackPlugin from 'tslint-webpack-plugin';
 import * as webpack from 'webpack';
@@ -8,7 +9,7 @@ const env = process.env.NODE_ENV === 'production'
   : 'development';
 
 const config: webpack.Configuration = {
-  entry: './src/server.ts',
+  entry: path.resolve(__dirname, 'src/server.ts'),
   externals: [webpackNodeExternals()],
   mode: env,
   module: {
@@ -27,6 +28,13 @@ const config: webpack.Configuration = {
     new tslintWebpackPlugin({
       config: './tslint.json',
       files: './src/**/*.ts',
+    }),
+    new nodemonWebpackPlugin({
+      env: {
+        DEBUG: 'debug',
+      },
+      script: path.resolve(__dirname, 'build/app.js'),
+      watch: [path.resolve(__dirname, 'build')],
     }),
   ],
   resolve: {

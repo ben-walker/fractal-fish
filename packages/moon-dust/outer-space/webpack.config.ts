@@ -3,6 +3,7 @@ import * as nodemonWebpackPlugin from 'nodemon-webpack-plugin';
 import * as path from 'path';
 import * as tslintWebpackPlugin from 'tslint-webpack-plugin';
 import * as webpack from 'webpack';
+import * as webpackBuildNotifier from 'webpack-build-notifier';
 import * as webpackNodeExternals from 'webpack-node-externals';
 
 const env = process.env.NODE_ENV === 'production'
@@ -38,6 +39,7 @@ const config: webpack.Configuration = {
       watch: [path.resolve(__dirname, 'build')],
     }),
     new dotenvWebpack(),
+    new webpackBuildNotifier(),
   ],
   resolve: {
     extensions: ['.ts', '.js'],

@@ -1,4 +1,5 @@
 import * as path from 'path';
+import * as tslintWebpackPlugin from 'tslint-webpack-plugin';
 import * as webpack from 'webpack';
 import * as webpackNodeExternals from 'webpack-node-externals';
 
@@ -22,6 +23,12 @@ const config: webpack.Configuration = {
     filename: 'app.js',
     path: path.resolve(__dirname, 'build'),
   },
+  plugins: [
+    new tslintWebpackPlugin({
+      config: './tslint.json',
+      files: './src/**/*.ts',
+    }),
+  ],
   resolve: {
     extensions: ['.ts', '.js'],
   },

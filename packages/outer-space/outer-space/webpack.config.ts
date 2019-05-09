@@ -1,3 +1,4 @@
+import * as dotenvWebpack from 'dotenv-webpack';
 import * as nodemonWebpackPlugin from 'nodemon-webpack-plugin';
 import * as path from 'path';
 import * as tslintWebpackPlugin from 'tslint-webpack-plugin';
@@ -36,6 +37,7 @@ const config: webpack.Configuration = {
       script: path.resolve(__dirname, 'build/app.js'),
       watch: [path.resolve(__dirname, 'build')],
     }),
+    new dotenvWebpack(),
   ],
   resolve: {
     extensions: ['.ts', '.js'],

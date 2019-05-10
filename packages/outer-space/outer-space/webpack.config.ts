@@ -11,6 +11,7 @@ const env = process.env.NODE_ENV === 'production'
   : 'development';
 
 const config: webpack.Configuration = {
+  devtool: 'inline-source-map',
   entry: path.resolve(__dirname, 'src/server.ts'),
   externals: [webpackNodeExternals()],
   mode: env,

@@ -9,7 +9,7 @@
   },
   "main": "",
   "scripts": {
-    "build": "webpack"
+    "start:dev": "webpack"
   },
   "author": {
     "name": "Ben Walker",

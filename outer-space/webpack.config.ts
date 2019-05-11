@@ -1,7 +1,7 @@
 import * as dotenvWebpack from 'dotenv-webpack';
+import * as forkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import * as nodemonWebpackPlugin from 'nodemon-webpack-plugin';
 import * as path from 'path';
-import * as tslintWebpackPlugin from 'tslint-webpack-plugin';
 import * as webpack from 'webpack';
 import * as webpackBuildNotifier from 'webpack-build-notifier';
 import * as webpackNodeExternals from 'webpack-node-externals';
@@ -20,6 +20,10 @@ const config: webpack.Configuration = {
       {
         include: path.resolve(__dirname, 'src'),
         loader: 'ts-loader',
+        options: {
+          experimentalWatchApi: true,
+          transpileOnly: true,
+        },
         test: /\.ts$/,
       },
     ],
@@ -29,19 +33,19 @@ const config: webpack.Configuration = {
     path: path.resolve(__dirname, 'build'),
   },
   plugins: [
-    new tslintWebpackPlugin({
-      config: './tslint.json',
-      files: './src/**/*.ts',
-    }),
     new nodemonWebpackPlugin({
       env: {
         DEBUG: 'debug',
       },
+      quiet: true,
       script: path.resolve(__dirname, 'build/app.js'),
-      watch: [path.resolve(__dirname, 'build')],
+      watch: [path.resolve(__dirname, 'build/app.js')],
     }),
     new dotenvWebpack(),
     new webpackBuildNotifier(),
+    new forkTsCheckerWebpackPlugin({
+      tslint: true,
+    }),
   ],
   resolve: {
     extensions: ['.ts', '.js'],

@@ -1,3 +1,3 @@
 import debug from 'debug';
 
-export default debug('debug');
+export default debug('outer-space');

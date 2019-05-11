@@ -16,7 +16,7 @@ const config: webpack.Configuration = {
     }),
     new nodemonWebpackPlugin({
       env: {
-        DEBUG: 'debug',
+        DEBUG: 'outer-space',
         quiet: true,
         script: path.resolve(__dirname, 'build/app.bundle.js'),
         watch: [path.resolve(__dirname, 'build/app.bundle.js')],

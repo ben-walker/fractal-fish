@@ -18,8 +18,9 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
+        include: path.resolve(__dirname, 'src'),
+        loader: 'ts-loader',
         test: /\.ts$/,
-        use: ['ts-loader'],
       },
     ],
   },

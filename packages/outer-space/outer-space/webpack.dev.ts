@@ -3,7 +3,6 @@ import * as forkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import * as nodemonWebpackPlugin from 'nodemon-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
-import * as webpackBuildNotifier from 'webpack-build-notifier';
 import * as webpackMerge from 'webpack-merge';
 import webpackCommon from './webpack.common';
 
@@ -12,7 +11,6 @@ const config: webpack.Configuration = {
   mode: 'development',
   plugins: [
     new dotenvWebpack(),
-    new webpackBuildNotifier(),
     new forkTsCheckerWebpackPlugin({
       tslint: true,
     }),
@@ -20,8 +18,8 @@ const config: webpack.Configuration = {
       env: {
         DEBUG: 'debug',
         quiet: true,
-        script: path.resolve(__dirname, 'build/app.js'),
-        watch: [path.resolve(__dirname, 'build/app.js')],
+        script: path.resolve(__dirname, 'build/app.bundle.js'),
+        watch: [path.resolve(__dirname, 'build/app.bundle.js')],
       },
     }),
   ],

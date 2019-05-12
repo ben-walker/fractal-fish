@@ -6,5 +6,5 @@ export default (server: Server) => {
   const bind = typeof address === 'string'
     ? `pipe ${address}`
     : `port ${address.port}`;
-  winston.debug(`Listening on ${bind}`);
+  winston.debug(`🚀  Server ready on ${bind}`);
 };

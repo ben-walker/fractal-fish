@@ -1,12 +1,10 @@
 import * as express from 'express';
 import * as helmet from 'helmet';
-import cors from './config/cors';
-import morgan from './config/morgan';
+import * as morgan from 'morgan';
+import morganOpts from './config/morgan-opts';
 
 const app = express();
 app.use(helmet());
-app.options('*', cors);
-app.use(cors);
-app.use(morgan);
+app.use(morgan('combined', morganOpts));
 
 export default app;

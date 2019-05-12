@@ -14,8 +14,18 @@ import {
 const PORT = normalizePort(process.env.PORT || '3000');
 app.set('port', PORT);
 
-const typeDefs = gql``;
-const resolvers = {};
+const typeDefs = gql`
+  type Query {
+    hello: String
+  }
+`;
+
+const resolvers = {
+  Query: {
+    hello: () => 'world',
+  },
+};
+
 const apollo = new ApolloServer({
   resolvers,
   typeDefs,

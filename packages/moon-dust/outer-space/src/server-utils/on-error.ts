@@ -1,4 +1,4 @@
-import logger from '../config/logger';
+import winston from '../config/winston';
 
 export default (error: NodeJS.ErrnoException, port: number | string) => {
   if (error.syscall !== 'listen') {
@@ -11,11 +11,11 @@ export default (error: NodeJS.ErrnoException, port: number | string) => {
 
   switch (error.code) {
     case 'EACCES':
-      logger(`${bind} requires elevated privileges`);
+      winston.debug(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      logger(`${bind} is already in use`);
+      winston.debug(`${bind} is already in use`);
       process.exit(1);
       break;
     default:

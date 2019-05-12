@@ -1,8 +1,8 @@
 import * as cors from 'cors';
 
-const opts: cors.CorsOptions = {
+const config: cors.CorsOptions = {
   credentials: true,
   origin: process.env.ORIGINS.split(','),
 };
 
-export default cors(opts);
+export default config;

@@ -7,4 +7,4 @@ const config: morgan.Options = {
   },
 };
 
-export default morgan('combined', config);
+export default config;

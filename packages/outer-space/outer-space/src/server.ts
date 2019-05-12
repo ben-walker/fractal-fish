@@ -1,5 +1,10 @@
+import {
+  ApolloServer,
+  gql,
+} from 'apollo-server-express';
 import * as http from 'http';
 import app from './app';
+import corsOpts from './config/cors-opts';
 import {
   normalizePort,
   onError,
@@ -9,8 +14,21 @@ import {
 const PORT = normalizePort(process.env.PORT || '3000');
 app.set('port', PORT);
 
+const typeDefs = gql``;
+const resolvers = {};
+const apollo = new ApolloServer({
+  resolvers,
+  typeDefs,
+});
+
+apollo.applyMiddleware({
+  app,
+  cors: corsOpts,
+  path: '/graph',
+});
+
 const server = http.createServer(app);
-server.listen(PORT);
+server.listen({ port: PORT });
 server.on('listening', () => onListening(server));
 server.on('error', e => onError(e, PORT));
 

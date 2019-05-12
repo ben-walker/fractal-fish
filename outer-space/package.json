@@ -10,7 +10,7 @@
   "main": "",
   "scripts": {
     "start": "webpack --config webpack.dev.ts",
-    "build": "webpack --config webpack.prod.ts"
+    "build": "webpack --progress --config webpack.prod.ts"
   },
   "author": {
     "name": "Ben Walker",

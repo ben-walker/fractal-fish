@@ -9,7 +9,7 @@
   },
   "main": "",
   "scripts": {
-    "start": "webpack --config webpack.dev.ts",
+    "start": "webpack --progress --config webpack.dev.ts",
     "build": "webpack --progress --config webpack.prod.ts"
   },
   "author": {

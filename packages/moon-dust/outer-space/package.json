@@ -51,6 +51,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "graphql": "^14.3.0",
+    "graphql-tools": "^4.0.4",
     "helmet": "^3.18.0",
     "morgan": "^1.9.1",
     "winston": "^3.2.1"

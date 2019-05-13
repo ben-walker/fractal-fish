@@ -54,6 +54,7 @@
     "graphql-tools": "^4.0.4",
     "helmet": "^3.18.0",
     "morgan": "^1.9.1",
+    "prisma-client-lib": "^1.30.4",
     "winston": "^3.2.1"
   }
 }

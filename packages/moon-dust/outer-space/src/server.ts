@@ -1,10 +1,8 @@
-import {
-  ApolloServer,
-  gql,
-} from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 import * as http from 'http';
 import app from './app';
 import corsOpts from './config/cors-opts';
+import schema from './graphql/schema';
 import {
   normalizePort,
   onError,
@@ -14,21 +12,8 @@ import {
 const PORT = normalizePort(process.env.PORT || '3000');
 app.set('port', PORT);
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => 'world',
-  },
-};
-
 const apollo = new ApolloServer({
-  resolvers,
-  typeDefs,
+  schema,
 });
 
 apollo.applyMiddleware({

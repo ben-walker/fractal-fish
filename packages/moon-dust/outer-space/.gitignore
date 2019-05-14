@@ -19,6 +19,7 @@ jspm_packages/
 
 # Build output
 build/
+generated/
 
 # Logging
 logs/

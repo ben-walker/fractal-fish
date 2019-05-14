@@ -2,7 +2,8 @@ import { ApolloServer } from 'apollo-server-express';
 import * as http from 'http';
 import app from './app';
 import corsOpts from './config/cors-opts';
-import schema from './graphql/schema';
+import { prisma } from './generated/prisma-client';
+import graphql from './graphql';
 import {
   normalizePort,
   onError,
@@ -13,7 +14,8 @@ const PORT = normalizePort(process.env.PORT || '3000');
 app.set('port', PORT);
 
 const apollo = new ApolloServer({
-  schema,
+  context: { prisma },
+  schema: graphql,
 });
 
 apollo.applyMiddleware({

@@ -6,3 +6,7 @@ secret: ${env:PRISMA_SERVICE_SECRET}
 generate:
   - generator: typescript-client
     output: ../src/generated/prisma-client/
+
+hooks:
+  post-deploy:
+    - nexus-prisma-generate --output ./src/generated/nexus-prisma

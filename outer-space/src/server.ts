@@ -14,7 +14,9 @@ const PORT = normalizePort(process.env.PORT || '3000');
 app.set('port', PORT);
 
 const apollo = new ApolloServer({
-  context: { prisma },
+  context: ({ req }) => ({
+    db: prisma,
+  }),
   schema: graphqlSchema,
 });
 

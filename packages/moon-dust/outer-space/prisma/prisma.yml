@@ -1,5 +1,5 @@
 datamodel: datamodel.prisma
-endpoint: http://localhost:4466
+endpoint: ${env:PRISMA_ENDPOINT}
 databaseType: document
 
 generate:

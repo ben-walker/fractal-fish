@@ -6,7 +6,8 @@
   ],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "single"]
+    "quotemark": [true, "single"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
   },
   "rulesDirectory": [],
   "linterOptions": {

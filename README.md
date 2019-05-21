@@ -64,7 +64,7 @@ Online poker.
       - All TypeScript in [src/](./outer-space/src/) is linted, compiled, and bundled into a `build` directory.
       - `nodemon` runs the bundled application.
       - `webpack` watches for changes in [src/](./outer-space/src/).
-      `nexus-prisma` generates the final GraphQL schema which will be available through the API server.
+      - `nexus-prisma` generates the final GraphQL schema which will be available through the API server.
 
 ## Design
 

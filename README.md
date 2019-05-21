@@ -58,6 +58,14 @@ Online poker.
       - Generate TypeScript CRUD building blocks for [datamodel.prisma](./outer-space/prisma/datamodel.prisma) using `nexus-prisma-generate`.
         - These building blocks are used in conjunction with `nexus-prisma` to define the GraphQL API in [graphql-schema/](./outer-space/src/graphql-schema).
 
+- **API Server**
+  1. Start the Server - `npm run start`
+      - Use [webpack.common.ts](./outer-space/webpack.common.ts) and [webpack.dev.ts](./outer-space/webpack.dev.ts) to bundle and deploy code.
+      - All TypeScript in [src/](./outer-space/src/) is linted, compiled, and bundled into a `build` directory.
+      - `nodemon` runs the bundled application.
+      - `webpack` watches for changes in [src/](./outer-space/src/).
+      `nexus-prisma` generates the final GraphQL schema which will be available through the API server.
+
 ## Design
 
 ### From Above

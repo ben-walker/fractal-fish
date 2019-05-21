@@ -40,7 +40,7 @@ Online poker.
 | Package manager | **[npm](https://github.com/npm/cli)** |
 | Bundling | **[webpack](https://github.com/webpack/webpack)** |
 
-## Backend Build Process ([outer-space/](./outer-space/))
+## Backend Dev Build Process ([outer-space/](./outer-space/))
 
 - **Prisma Server** - Deploying the DAL (Data Access Layer)
   1. Create the Environment

@@ -1,5 +1,5 @@
-import User from './User';
+import Mutation from './Mutation';
 
 export default {
-  User,
+  Mutation,
 };

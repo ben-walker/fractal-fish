@@ -40,8 +40,26 @@ Online poker.
 | Package manager | **[npm](https://github.com/npm/cli)** |
 | Bundling | **[webpack](https://github.com/webpack/webpack)** |
 
+## Backend Build Process ([outer-space/](./outer-space/))
+
+- **Prisma Server** - Deploying the DAL (Data Access Layer)
+  1. Create the Environment
+      - A `.env` file is required in the project route ([outer-space/](./outer-space/)).
+      - The environment file must define the variables required by [docker-compose.yml](./outer-space/docker-compose.yml), [prisma.yml](./outer-space/prisma/prisma.yml), and any other relevant file.
+  2. Dockerize Prisma - `docker-compose up -d`
+      - Start the Prisma server container in the background.
+      - Bootstrap the service via [docker-compose.yml](./outer-space/docker-compose.yml).
+  3. Authenticate with Prisma
+      - The environment variable `PRISMA_MANAGEMENT_API_SECRET` must be set to the correct value to deploy Prisma.
+  4. Deploy Prisma - `prisma deploy`
+      - Deploy the [prisma.yml](./outer-space/prisma/prisma.yml) service config to the Prisma service container created in step 1.
+      - Generate a TypeScript Prisma client from [datamodel.prisma](./outer-space/prisma/datamodel.prisma).
+        - Prisma client can be accessed on a resolver's context.
+      - Generate TypeScript CRUD building blocks for [datamodel.prisma](./outer-space/prisma/datamodel.prisma) using `nexus-prisma-generate`.
+        - These building blocks are used in conjunction with `nexus-prisma` to define the GraphQL API in [graphql-schema/](./outer-space/src/graphql-schema).
+
 ## Design
 
 ### From Above
 
-* TBD
+- TBD

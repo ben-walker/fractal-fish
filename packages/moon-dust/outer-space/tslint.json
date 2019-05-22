@@ -11,6 +11,9 @@
   },
   "rulesDirectory": [],
   "linterOptions": {
-    "exclude": ["src/generated/**/*"]
+    "exclude": [
+      "src/generated/**/*",
+      "node_modules/**/*.ts"
+    ]
   }
 }

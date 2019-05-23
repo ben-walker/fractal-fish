@@ -12,6 +12,6 @@ Frontend React webapp.
 | --- | --- |
 | Environment | **[react](https://github.com/facebook/react/)** |
 | Framework | [material-ui](https://material-ui.com/)/[grommet](https://v2.grommet.io/) |
-| State management | [redux](https://github.com/reduxjs/redux) |
+| State management | [redux](https://github.com/reduxjs/redux)/[react-apollo](https://github.com/apollographql/react-apollo) |
 | Data fetching | [react-apollo](https://github.com/apollographql/react-apollo) |
 | Routing | [react-router](https://github.com/ReactTraining/react-router) |

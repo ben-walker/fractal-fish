@@ -4,11 +4,7 @@ import app from './app';
 import corsOpts from './config/cors-opts';
 import { prisma } from './generated/prisma-client';
 import graphqlSchema from './graphql-schema';
-import {
-  normalizePort,
-  onError,
-  onListening,
-} from './server-utils';
+import { normalizePort, onError, onListening } from './server-utils';
 
 const PORT = normalizePort(process.env.PORT || '3000');
 app.set('port', PORT);

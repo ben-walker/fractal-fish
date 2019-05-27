@@ -1,17 +1,7 @@
 import * as appRootPath from 'app-root-path';
 import * as fs from 'fs';
-import {
-  createLogger,
-  format,
-  transports,
-} from 'winston';
-const {
-  combine,
-  colorize,
-  timestamp,
-  json,
-  printf,
-} = format;
+import { createLogger, format, transports } from 'winston';
+const { combine, colorize, timestamp, json, printf } = format;
 
 const env = process.env.NODE_ENV || 'development';
 const logDir = `${appRootPath}/logs`;
@@ -27,10 +17,7 @@ const logger = createLogger({
       filename: 'exceptions.log',
     }),
   ],
-  format: combine(
-    json(),
-    timestamp(),
-  ),
+  format: combine(json(), timestamp()),
   level: env === 'development' ? 'debug' : 'info',
   transports: [
     new transports.File({
@@ -47,15 +34,12 @@ const logger = createLogger({
 });
 
 if (env !== 'production') {
-  logger.add(new transports.Console({
-    debugStdout: true,
-    format: combine(
-      colorize(),
-      printf(
-        info => `${info.level}: ${info.message}`,
-      ),
-    ),
-  }));
+  logger.add(
+    new transports.Console({
+      debugStdout: true,
+      format: combine(colorize(), printf(info => `${info.level}: ${info.message}`)),
+    })
+  );
 }
 
 export default logger;

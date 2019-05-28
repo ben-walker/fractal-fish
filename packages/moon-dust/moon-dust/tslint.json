@@ -1,17 +1,13 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:latest",
-    "tslint-react"
-  ],
+  "extends": ["tslint:latest", "tslint-react", "tslint-plugin-prettier", "tslint-config-prettier"],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "single", "jsx-double"]
+    "quotemark": [true, "single", "jsx-double"],
+    "prettier": true
   },
   "rulesDirectory": [],
   "linterOptions": {
-    "exclude": [
-      "node_modules/**/*.ts"
-    ]
+    "exclude": ["node_modules/**/*.ts"]
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "moon-dust",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@storybook/addon-knobs": "^5.0.11",

@@ -16,5 +16,5 @@ Online poker.
 
 ## Subdirectories
 
-- [outer-space/](./outer-space/) (Express/GraphQL backend)
-- [moon-dust/](./moon-dust/) (React frontend)
+- [outer-space/](./packages/outer-space/) (Express/GraphQL backend)
+- [moon-dust/](./packages/moon-dust/) (React frontend)

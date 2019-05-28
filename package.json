@@ -1,6 +1,9 @@
 {
   "name": "fractal-fish",
   "private": true,
+  "workspaces": [
+    "capsules/*"
+  ],
   "devDependencies": {
     "husky": "^2.3.0",
     "lerna": "^3.14.1"

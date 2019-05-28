@@ -1,3 +1,13 @@
+# Dependencies
+node_modules/
+
+# Output
+build/
+
+# Logging
+logs/
+*.log
+
 # Local env files
 .env
 .env.local
@@ -12,14 +22,3 @@
 *.njsproj
 *.sln
 *.sw*
-
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Build output
-build/
-generated/
-
-# Logging
-logs/

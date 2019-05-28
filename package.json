@@ -1,21 +1,13 @@
 {
   "name": "fractal-fish",
-  "version": "0.0.0",
-  "description": "Fractal Fish",
-  "main": "",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ben-walker/fractal-fish.git"
+  "private": true,
+  "devDependencies": {
+    "husky": "^2.3.0",
+    "lerna": "^3.14.1"
   },
-  "author": {
-    "name": "Ben Walker",
-    "email": "bwalke05@gmail.com",
-    "url": "https://github.com/ben-walker"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ben-walker/fractal-fish/issues"
-  },
-  "homepage": "https://github.com/ben-walker/fractal-fish#readme"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run --concurrency 1 --stream precommit"
+    }
+  }
 }

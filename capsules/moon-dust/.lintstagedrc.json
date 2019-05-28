@@ -1,0 +1,5 @@
+{
+  "linters": {
+    "*.{ts,tsx}": ["tslint --fix", "git add"]
+  }
+}

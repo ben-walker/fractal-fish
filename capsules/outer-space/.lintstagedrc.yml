@@ -1,4 +1,0 @@
-linters:
-  *.ts:
-    - tslint --fix
-    - git add

@@ -1,5 +1,11 @@
 {
   "name": "fractal-fish",
+  "version": "0.0.0",
+  "author": {
+    "name": "Ben Walker",
+    "email": "bwalke05@gmail.com",
+    "url": "https://github.com/ben-walker"
+  },
   "private": true,
   "workspaces": [
     "capsules/*"

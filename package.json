@@ -1,12 +1,19 @@
 {
   "name": "fractal-fish",
   "version": "0.0.0",
+  "description": "Online poker",
+  "private": true,
   "author": {
     "name": "Ben Walker",
     "email": "bwalke05@gmail.com",
     "url": "https://github.com/ben-walker"
   },
-  "private": true,
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ben-walker/fractal-fish.git"
+  },
+  "main": "",
   "workspaces": [
     "capsules/*"
   ],

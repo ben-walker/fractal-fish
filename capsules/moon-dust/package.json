@@ -1,7 +1,28 @@
 {
   "name": "moon-dust",
   "version": "0.0.0",
+  "description": "React frontend",
   "private": true,
+  "author": {
+    "name": "Ben Walker",
+    "email": "bwalke05@gmail.com",
+    "url": "https://github.com/ben-walker"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ben-walker/fractal-fish.git",
+    "directory": "capsules/moon-dust"
+  },
+  "main": "",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook",
+    "precommit": "lint-staged"
+  },
   "dependencies": {
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-viewport": "^5.0.11",
@@ -25,14 +46,6 @@
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
     "typescript": "3.4.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook",
-    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": "react-app"

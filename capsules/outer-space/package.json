@@ -2,10 +2,17 @@
   "name": "outer-space",
   "version": "0.0.0",
   "description": "GraphQL API",
+  "private": true,
+  "author": {
+    "name": "Ben Walker",
+    "email": "bwalke05@gmail.com",
+    "url": "https://github.com/ben-walker"
+  },
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/ben-walker/fractal-fish.git",
-    "directory": "outer-space"
+    "directory": "capsules/outer-space"
   },
   "main": "",
   "scripts": {
@@ -13,12 +20,6 @@
     "build": "webpack --progress --config webpack.prod.ts",
     "precommit": "lint-staged"
   },
-  "author": {
-    "name": "Ben Walker",
-    "email": "bwalke05@gmail.com",
-    "url": "https://github.com/ben-walker"
-  },
-  "license": "ISC",
   "devDependencies": {
     "@types/app-root-path": "^1.2.4",
     "@types/cors": "^2.8.5",

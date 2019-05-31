@@ -28,14 +28,6 @@
     "@storybook/addon-viewport": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "@storybook/theming": "^5.0.11",
-    "@types/jest": "24.0.13",
-    "@types/node": "12.0.3",
-    "@types/react": "16.8.19",
-    "@types/react-dom": "16.8.4",
-    "@types/react-router-dom": "^4.3.3",
-    "@types/storybook__addon-knobs": "^5.0.0",
-    "@types/storybook__addon-viewport": "^4.1.0",
-    "@types/storybook__react": "^4.0.1",
     "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
     "react": "^16.8.6",
@@ -46,8 +38,7 @@
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "tslint-react": "^4.0.0",
-    "typescript": "3.4.5"
+    "tslint-react": "^4.0.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -63,5 +54,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.3",
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
+    "@types/react-router-dom": "^4.3.3",
+    "@types/storybook__addon-knobs": "^5.0.0",
+    "@types/storybook__addon-viewport": "^4.1.0",
+    "@types/storybook__react": "^4.0.1",
+    "@types/webpack": "^4.4.32",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1",
+    "webpack": "^4.32.2"
   }
 }

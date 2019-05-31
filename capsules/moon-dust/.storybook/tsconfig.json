@@ -1,8 +1,15 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "outDir": "build/lib",
+    "module": "commonjs",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "jsx": "react",
     "noEmit": false,
-    "isolatedModules": false
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "sourceMap": true
   }
 }

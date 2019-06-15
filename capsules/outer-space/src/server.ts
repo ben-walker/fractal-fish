@@ -11,6 +11,7 @@ app.set('port', PORT);
 
 const apollo = new ApolloServer({
   context: ({ req }) => ({
+    ...req,
     db: prisma,
   }),
   schema: graphqlSchema,

@@ -1,4 +1,4 @@
-import cleanWebpackPlugin from 'clean-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackBuildNotifier from 'webpack-build-notifier';
@@ -24,7 +24,7 @@ const config: webpack.Configuration = {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
-  plugins: [new cleanWebpackPlugin(), new webpackBuildNotifier()],
+  plugins: [new CleanWebpackPlugin(), new webpackBuildNotifier()],
   resolve: {
     extensions: ['.ts', '.js'],
   },

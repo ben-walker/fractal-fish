@@ -13,6 +13,15 @@ const schema = makePrismaSchema({
     client: prisma,
     datamodelInfo: nexusPrisma,
   },
+  typegenAutoConfig: {
+    contextType: 'types.IContext',
+    sources: [
+      {
+        alias: 'types',
+        source: path.resolve('src/types/prisma-context.d.ts'),
+      },
+    ],
+  },
   types: allTypes,
 });
 

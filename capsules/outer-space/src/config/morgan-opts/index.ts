@@ -1,7 +1,7 @@
-import * as morgan from 'morgan';
+import { Options as MorganOptions } from 'morgan';
 import winston from '../winston';
 
-const config: morgan.Options = {
+const config: MorganOptions = {
   stream: {
     write: msg => winston.info(msg),
   },

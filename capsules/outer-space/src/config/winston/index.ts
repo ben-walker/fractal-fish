@@ -1,13 +1,13 @@
 import * as appRootPath from 'app-root-path';
-import * as fs from 'fs';
+import { existsSync, mkdirSync } from 'fs';
 import { createLogger, format, transports } from 'winston';
-const { combine, colorize, timestamp, json, printf } = format;
 
+const { combine, colorize, timestamp, json, printf } = format;
 const env = process.env.NODE_ENV || 'development';
 const logDir = `${appRootPath}/logs`;
 
-if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(logDir);
+if (!existsSync(logDir)) {
+  mkdirSync(logDir);
 }
 
 const logger = createLogger({

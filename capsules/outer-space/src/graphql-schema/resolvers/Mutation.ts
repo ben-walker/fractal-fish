@@ -1,10 +1,8 @@
 import { prismaObjectType } from 'nexus-prisma';
 
 const Mutation = prismaObjectType({
+  definition: t => t.prismaFields(['*']),
   name: 'Mutation',
-  definition(t) {
-    t.prismaFields(['createUser', 'deleteUser']);
-  },
 });
 
 export default Mutation;

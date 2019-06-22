@@ -26,33 +26,32 @@
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-knobs": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addon-viewport": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "@storybook/theming": "^5.0.11",
-    "@types/jest": "24.0.13",
-    "@types/node": "12.0.3",
-    "@types/react": "16.8.19",
+    "@storybook/addon-actions": "^5.1.8",
+    "@storybook/addon-knobs": "^5.1.8",
+    "@storybook/addon-links": "^5.1.8",
+    "@storybook/addon-viewport": "^5.1.8",
+    "@storybook/addons": "^5.1.8",
+    "@storybook/theming": "^5.1.8",
+    "@types/node": "12.0.8",
+    "@types/react": "16.8.20",
     "@types/react-dom": "16.8.4",
-    "@types/react-router-dom": "^4.3.3",
-    "@types/storybook__addon-knobs": "^5.0.0",
-    "@types/storybook__addon-viewport": "^4.1.0",
-    "@types/storybook__react": "^4.0.1",
-    "lint-staged": "^8.1.7",
-    "prettier": "^1.17.1",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/storybook__addon-knobs": "^5.0.1",
+    "@types/storybook__addon-viewport": "^4.1.1",
+    "@types/storybook__react": "^4.0.2",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "ts-loader": "^6.0.1",
+    "ts-loader": "^6.0.2",
     "ts-node": "^8.2.0",
-    "tslint": "^5.16.0",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.5.1"
+    "typescript": "^3.5.2"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -70,6 +69,6 @@
     ]
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.11"
+    "@storybook/react": "^5.1.8"
   }
 }

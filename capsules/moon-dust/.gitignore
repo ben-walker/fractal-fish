@@ -4,6 +4,7 @@ node_modules/
 # Output
 build/
 generated/
+src/react-app-env.d.ts
 
 # Logging
 logs/

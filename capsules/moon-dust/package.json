@@ -41,6 +41,7 @@
     "@types/storybook__addon-knobs": "^5.0.1",
     "@types/storybook__addon-viewport": "^4.1.1",
     "@types/storybook__react": "^4.0.2",
+    "@types/styled-components": "^4.1.16",
     "lint-staged": "^8.2.1",
     "prettier": "^1.18.2",
     "ts-loader": "^6.0.4",
@@ -55,7 +56,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.3.2"
   },
   "eslintConfig": {
     "extends": "react-app"

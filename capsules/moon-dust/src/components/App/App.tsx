@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import logo from '../../assets/logo.svg';
+import GlobalStyle from '../../theme/global-style';
 
 const StyledApp = styled.div`
   text-align: center;
@@ -39,6 +40,7 @@ const AppLink = styled.a`
 const App: React.FC = () => {
   return (
     <StyledApp>
+      <GlobalStyle />
       <AppHeader>
         <AppLogo src={logo} alt="logo" />
         <p>

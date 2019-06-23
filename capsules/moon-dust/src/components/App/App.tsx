@@ -1,4 +1,3 @@
-import { Grommet } from 'grommet';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import logo from '../../assets/logo.svg';
@@ -40,20 +39,18 @@ const AppLink = styled.a`
 
 const App: React.FC = () => {
   return (
-    <Grommet plain={true}>
-      <StyledApp>
-        <GlobalStyle />
-        <AppHeader>
-          <AppLogo src={logo} alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <AppLink href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </AppLink>
-        </AppHeader>
-      </StyledApp>
-    </Grommet>
+    <StyledApp>
+      <GlobalStyle />
+      <AppHeader>
+        <AppLogo src={logo} alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <AppLink href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+          Learn React
+        </AppLink>
+      </AppHeader>
+    </StyledApp>
   );
 };
 

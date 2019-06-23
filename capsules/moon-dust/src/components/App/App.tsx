@@ -1,10 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import tw from 'tailwind.macro';
 import logo from '../../assets/logo.svg';
 import GlobalStyle from '../../theme/global-style';
 
 const StyledApp = styled.div`
-  text-align: center;
+  ${tw`text-center`}
 `;
 
 const rotate360 = keyframes`
@@ -17,24 +18,26 @@ const rotate360 = keyframes`
 `;
 
 const AppLogo = styled.img`
+  ${tw`pointer-events-none`}
   animation: ${rotate360} infinite 120s linear;
   height: 40vmin;
-  pointer-events: none;
 `;
 
 const AppHeader = styled.div`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${tw`
+    bg-gray-800
+    min-h-screen
+    flex
+    flex-col
+    items-center
+    justify-center
+    text-white
+  `}
   font-size: calc(10px + 2vmin);
-  color: white;
 `;
 
 const AppLink = styled.a`
-  color: #61dafb;
+  ${tw`text-blue-500`}
 `;
 
 const App: React.FC = () => {

@@ -18,6 +18,11 @@ Backend GraphQL API server.
 | Data Access Layer | **[Prisma](https://github.com/prisma/prisma)**                                                                         |
 | Database          | **MongoDB**                                                                                                            |
 
+## Database Details
+
+- The dev database is hosted by MongoDB Atlas.
+- **Note:** Whitelist your development IP address from within Atlas before attempting the **Development Build Process** outlined below.
+
 ## Development Build Process
 
 - **Prisma Server** - Deploying the DAL (Data Access Layer)

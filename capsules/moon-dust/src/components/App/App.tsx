@@ -9,8 +9,7 @@ const StyledApp = styled.div`
 
 const AppHeader = styled.div`
   ${tw`min-h-screen flex flex-col items-center justify-center`}
-  background-color: #2d3748;
-  color: white;
+  color: black;
   font-size: calc(10px + 2vmin);
 `;
 

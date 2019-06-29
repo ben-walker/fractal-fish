@@ -8,7 +8,9 @@ const StyledApp = styled.div`
 `;
 
 const AppHeader = styled.div`
-  ${tw`bg-gray-800 min-h-screen flex flex-col items-center justify-center text-white`}
+  ${tw`min-h-screen flex flex-col items-center justify-center`}
+  background-color: #2d3748;
+  color: white;
   font-size: calc(10px + 2vmin);
 `;
 

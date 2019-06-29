@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import IndexStyle from '../../theme/index-style';
+import BaseStyle from '../../theme/base-style';
 
 const StyledApp = styled.div`
   ${tw`text-center`}
@@ -15,7 +15,7 @@ const AppHeader = styled.div`
 const App: React.FC = () => {
   return (
     <StyledApp>
-      <IndexStyle />
+      <BaseStyle />
       <AppHeader>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.

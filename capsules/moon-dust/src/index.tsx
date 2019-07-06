@@ -8,7 +8,7 @@ import './config/typeface';
 import * as serviceWorker from './serviceWorker';
 import theme from './theme/styled-theme';
 
-const WrappedApp: React.FC = () => {
+const ComposedApp: React.FC = () => {
   return (
     <ApolloProvider client={apolloClient}>
       <ThemeProvider theme={theme}>
@@ -18,5 +18,5 @@ const WrappedApp: React.FC = () => {
   );
 };
 
-ReactDOM.render(<WrappedApp />, document.getElementById('root'));
+ReactDOM.render(<ComposedApp />, document.getElementById('root'));
 serviceWorker.unregister();

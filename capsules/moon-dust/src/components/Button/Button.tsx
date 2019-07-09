@@ -6,15 +6,15 @@ const StyledButton = styled.button`
   ${tw`
     rounded-full
     outline-none
-    bg-transparent
-    px-3
-    py-2
-    border-4
+    select-none
+    border-none
+    bg-purple-400
+    px-4
+    py-3
     text-sm
-    font-semibold
-    font-sans
+    text-white
     cursor-pointer
-    hover:shadow-lg
+    shadow-lg
   `}
 `;
 

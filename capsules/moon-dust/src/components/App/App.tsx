@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
-import Button from '../Button/Button';
 
 const StyledApp = styled.div`
   ${tw`text-center`}
@@ -20,7 +19,6 @@ const App: React.FC = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Button text="Default Button" />
       </AppHeader>
     </StyledApp>
   );

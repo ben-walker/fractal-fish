@@ -5,7 +5,8 @@
   "rules": {
     "quotemark": [true, "single", "jsx-double"],
     "prettier": true,
-    "no-implicit-dependencies": [true, "dev"]
+    "no-implicit-dependencies": [true, "dev"],
+    "no-submodule-imports": false
   },
   "rulesDirectory": [],
   "linterOptions": {

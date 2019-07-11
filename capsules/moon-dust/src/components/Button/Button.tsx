@@ -9,8 +9,10 @@ const StyledButton = styled.button`
     select-none
     border-none
     bg-purple-400
+    hover:bg-purple-500
     px-4
     py-3
+    font-bold
     text-sm
     text-white
     cursor-pointer

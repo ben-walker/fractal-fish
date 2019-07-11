@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+import 'typeface-open-sans';
+import 'typeface-source-code-pro';
 
 const GlobalStyle = createGlobalStyle`
   body {

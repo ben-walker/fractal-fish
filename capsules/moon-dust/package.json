@@ -42,6 +42,7 @@
     "@types/storybook__addon-viewport": "^4.1.1",
     "@types/storybook__react": "^4.0.2",
     "@types/styled-components": "^4.1.18",
+    "babel-plugin-styled-components": "^1.10.6",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
     "tailwind.macro": "^1.0.0-alpha.10",

@@ -6,11 +6,13 @@ import App from './components/App/App';
 import apolloClient from './config/apollo-client';
 import './config/typeface';
 import * as serviceWorker from './serviceWorker';
+import GlobalStyle from './theme/global-style';
 import theme from './theme/styled-theme';
 
 const ComposedApp: React.FC = () => {
   return (
     <ApolloProvider client={apolloClient}>
+      <GlobalStyle />
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>

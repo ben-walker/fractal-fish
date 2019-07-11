@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
   code {
     font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
+
+  button {
+    font-family: inherit;
+  }
 `;
 
 export default GlobalStyle;

@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import App from './components/App/App';
 import apolloClient from './config/apollo-client';
-import './config/typeface';
 import * as serviceWorker from './serviceWorker';
 import GlobalStyle from './theme/global-style';
 import theme from './theme/styled-theme';

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components/macro';
 import 'typeface-open-sans';
 import 'typeface-source-code-pro';
 

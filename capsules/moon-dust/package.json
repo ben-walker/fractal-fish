@@ -57,7 +57,7 @@
   "dependencies": {
     "apollo-boost": "^0.4.3",
     "graphql": "^14.4.2",
-    "navi": "^0.12.9",
+    "navi": "^0.12.10",
     "react": "^16.8.6",
     "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6",

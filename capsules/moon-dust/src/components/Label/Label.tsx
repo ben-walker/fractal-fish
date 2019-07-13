@@ -18,11 +18,11 @@ const StyledP = styled.p`
   `}
 `;
 
-export interface IProps {
+export interface ILabelProps {
   text: string;
 }
 
-const Label: React.FC<IProps> = props => {
+const Label: React.FC<ILabelProps> = props => {
   return (
     <StyledLabel>
       <StyledP>{props.text}</StyledP>

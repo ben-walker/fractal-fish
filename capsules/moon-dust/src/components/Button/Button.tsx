@@ -20,11 +20,11 @@ const StyledButton = styled.button`
   `}
 `;
 
-export interface IProps {
+export interface IButtonProps {
   text: string;
 }
 
-const Button: React.FC<IProps> = props => {
+const Button: React.FC<IButtonProps> = props => {
   return <StyledButton>{props.text}</StyledButton>;
 };
 

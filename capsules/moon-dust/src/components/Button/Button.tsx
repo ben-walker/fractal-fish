@@ -12,6 +12,7 @@ const StyledButton = styled.button`
     hover:bg-purple-600
     px-4
     py-3
+    m-3
     font-bold
     text-sm
     text-white

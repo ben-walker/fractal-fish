@@ -19,7 +19,7 @@ const StyledTextInput = styled.input`
   `}
 `;
 
-export interface ITextInputProps {
+export interface ITextInputProps extends React.HTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   type?: 'text' | 'password' | 'email' | 'number';
 }

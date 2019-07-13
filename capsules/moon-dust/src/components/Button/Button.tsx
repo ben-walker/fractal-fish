@@ -21,7 +21,7 @@ const StyledButton = styled.button`
   `}
 `;
 
-export interface IButtonProps {
+export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 

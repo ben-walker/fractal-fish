@@ -20,7 +20,7 @@ const StyledButton = styled.button`
   `}
 `;
 
-interface IProps {
+export interface IProps {
   text: string;
 }
 

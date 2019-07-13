@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Button from './Button';
+import Button, { IProps } from './Button';
 
-const defButton = {
+const defButton: IProps = {
   text: 'Default Button',
 };
 

@@ -21,7 +21,7 @@ const StyledTextInput = styled.input`
 
 export interface IProps {
   placeholder?: string;
-  type?: string;
+  type?: 'text' | 'password' | 'email' | 'number';
 }
 
 const TextInput: React.FC<IProps> = props => {

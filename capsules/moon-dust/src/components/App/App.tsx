@@ -12,13 +12,16 @@ const AppHeader = styled.div`
   font-size: calc(10px + 2vmin);
 `;
 
+const StyledP = styled.p`
+  ${tw`font-semibold`}
+`;
+
 const App: React.FC = () => {
   return (
     <StyledApp>
       <AppHeader>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <StyledP>Edit and save to reload.</StyledP>
+        <code>Here's some code - int p = 5;</code>
       </AppHeader>
     </StyledApp>
   );

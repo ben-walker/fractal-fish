@@ -8,8 +8,8 @@ const StyledButton = styled.button`
     outline-none
     select-none
     border-none
-    bg-purple-400
-    hover:bg-purple-500
+    bg-purple-500
+    hover:bg-purple-600
     px-4
     py-3
     font-bold

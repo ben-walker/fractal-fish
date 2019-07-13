@@ -18,12 +18,16 @@ const StyledTextInput = styled.input`
 `;
 
 export interface IProps {
-  placeholder: string;
-  type: string;
+  placeholder?: string;
+  type?: string;
 }
 
 const TextInput: React.FC<IProps> = props => {
   return <StyledTextInput placeholder={props.placeholder} type={props.type} />;
+};
+
+TextInput.defaultProps = {
+  type: 'text',
 };
 
 export default TextInput;

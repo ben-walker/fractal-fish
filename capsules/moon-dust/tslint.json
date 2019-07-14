@@ -6,7 +6,8 @@
     "quotemark": [true, "single", "jsx-double"],
     "prettier": true,
     "no-implicit-dependencies": [true, "dev"],
-    "no-submodule-imports": false
+    "no-submodule-imports": false,
+    "jsx-no-lambda": false
   },
   "rulesDirectory": [],
   "linterOptions": {

@@ -6,7 +6,7 @@ const StyledNavigationBar = styled.ul`
   ${tw`
     p-0
     m-0
-    bg-transparent
+    bg-purple-200
     border-solid
     border-0
     border-transparent

@@ -11,6 +11,7 @@ const server = http.createServer(app);
 export const io = socketIo(server);
 
 const port = '4000';
+
 server.listen({ port }, () =>
   winston.debug(`🚀  Server ready at http://localhost:${port}${apolloServer.graphqlPath}`)
 );

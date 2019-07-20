@@ -2,13 +2,14 @@ import * as http from 'http';
 import * as socketIo from 'socket.io';
 import app from './app';
 import apolloServer from './config/apollo-server';
+import io from './config/io';
 import winston from './config/winston';
 
 apolloServer.applyMiddleware({ app });
 
 const server = http.createServer(app);
 
-export const io = socketIo(server);
+io(socketIo(server));
 
 const port = '4000';
 

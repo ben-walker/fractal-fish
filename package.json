@@ -14,6 +14,9 @@
     "url": "https://github.com/ben-walker/fractal-fish.git"
   },
   "main": "",
+  "scripts": {
+    "start": "lerna run --parallel start"
+  },
   "workspaces": [
     "capsules/*"
   ],

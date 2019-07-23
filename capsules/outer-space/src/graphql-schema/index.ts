@@ -4,6 +4,9 @@ import nexusPrisma from '../generated/nexus-prisma';
 import { prisma } from '../generated/prisma-client';
 import * as allTypes from './resolvers';
 
+const typesAlias = 'types';
+const prismaContextHandle = 'IPrismaContext';
+
 const schema = makePrismaSchema({
   outputs: {
     schema: path.resolve('src/generated/schema.graphql'),
@@ -14,10 +17,10 @@ const schema = makePrismaSchema({
     datamodelInfo: nexusPrisma,
   },
   typegenAutoConfig: {
-    contextType: 'types.IContext',
+    contextType: `${typesAlias}.${prismaContextHandle}`,
     sources: [
       {
-        alias: 'types',
+        alias: typesAlias,
         source: path.resolve('src/types/prisma-context.d.ts'),
       },
     ],

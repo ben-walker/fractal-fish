@@ -47,7 +47,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.4.5",
-    "webpack": "^4.36.1",
+    "webpack": "^4.37.0",
     "webpack-build-notifier": "^1.0.3",
     "webpack-cli": "^3.3.6",
     "webpack-merge": "^4.2.1",

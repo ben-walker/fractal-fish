@@ -4,11 +4,14 @@ import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components/macro';
 import App from './components/App/App';
 import apolloClient from './config/apollo-client';
+import socket from './config/socket';
 import * as serviceWorker from './serviceWorker';
 import GlobalStyle from './theme/global-style';
 import theme from './theme/styled-theme';
 
 const ComposedApp: React.FC = () => {
+  socket.connect();
+
   return (
     <ApolloProvider client={apolloClient}>
       <GlobalStyle />

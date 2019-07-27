@@ -19,6 +19,7 @@ const StyledNavigationBar = styled(animated.ul)`
     h-full
   `}
   list-style-type: none;
+  will-change: width;
 `;
 
 const NavigationBar: React.FC = props => {

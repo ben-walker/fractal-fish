@@ -15,7 +15,7 @@ const StyledTextInput = styled.input`
     py-2
     font-bold
     text-sm
-    shadow-lg
+    shadow-md
   `}
 `;
 

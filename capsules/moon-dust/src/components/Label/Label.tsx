@@ -6,6 +6,7 @@ const StyledLabel = styled.div`
   ${tw`
     block
     text-left
+    m-4
   `}
 `;
 
@@ -14,7 +15,6 @@ const StyledP = styled.p`
     select-none
     text-base
     font-semibold
-    mb-2
   `}
 `;
 

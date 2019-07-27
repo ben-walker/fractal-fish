@@ -1,28 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 
-const StyledNavigationBar = styled.ul`
+const StyledNavigationBar = styled(animated.ul)`
   ${tw`
     p-0
     m-0
-    bg-purple-200
+    bg-transparent
     border-solid
     border-0
     border-transparent
     shadow-xl
     fixed
     bottom-0
-    h-16
-    w-full
-    lg:h-full
-    lg:w-56
+    right-0
+    rounded
+    h-full
   `}
   list-style-type: none;
 `;
 
 const NavigationBar: React.FC = props => {
-  return <StyledNavigationBar>{props.children}</StyledNavigationBar>;
+  const [isExpanded, setExpanded] = useState(false);
+  const [big, little] = ['14rem', '4rem'];
+
+  const animatedStyle = useSpring({
+    config: config.stiff,
+    width: isExpanded ? big : little,
+  });
+
+  return (
+    <StyledNavigationBar
+      onMouseEnter={() => setExpanded(true)}
+      onMouseLeave={() => setExpanded(false)}
+      style={animatedStyle}
+    >
+      {props.children}
+    </StyledNavigationBar>
+  );
 };
 
 export default NavigationBar;

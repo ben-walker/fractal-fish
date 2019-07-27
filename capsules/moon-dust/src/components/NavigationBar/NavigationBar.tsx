@@ -11,7 +11,7 @@ const StyledNavigationBar = styled(animated.ul)`
     border-solid
     border-0
     border-transparent
-    shadow-xl
+    shadow-lg
     fixed
     bottom-0
     right-0

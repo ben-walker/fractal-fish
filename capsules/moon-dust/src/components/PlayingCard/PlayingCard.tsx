@@ -3,16 +3,19 @@ import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 
-const StyledPlayingCard = styled(animated.div)`
+const StyledPlayingCard = styled.div``;
+
+const CardFace = styled(animated.div)`
   ${tw`
     m-4
     w-32
     h-48
     rounded
-    shadow-md
-    hover:shadow-lg
+    shadow-lg
     cursor-pointer
-    text-center
+    bg-cover
+    bg-transparent
+    absolute
   `}
 `;
 
@@ -24,7 +27,30 @@ export interface IPlayingCardProps extends React.HTMLAttributes<HTMLDivElement> 
 const PlayingCard: React.FC<IPlayingCardProps> = props => {
   const [isFlipped, setFlipped] = useState(false);
 
-  return <StyledPlayingCard onClick={() => setFlipped(state => !state)} />;
+  const { transform, opacity } = useSpring({
+    config: config.slow,
+    opacity: isFlipped ? 1 : 0,
+    transform: `rotateY(${isFlipped ? 180 : 0}deg)`,
+  });
+
+  return (
+    <StyledPlayingCard onClick={() => setFlipped(state => !state)}>
+      <CardFace
+        style={{
+          backgroundColor: 'green',
+          opacity: opacity.interpolate(o => 1 - o),
+          transform,
+        }}
+      />
+      <CardFace
+        style={{
+          backgroundColor: 'blue',
+          opacity,
+          transform: transform.interpolate(t => `${t} rotateY(180deg)`),
+        }}
+      />
+    </StyledPlayingCard>
+  );
 };
 
 export default PlayingCard;

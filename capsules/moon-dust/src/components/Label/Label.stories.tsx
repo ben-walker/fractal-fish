@@ -7,6 +7,6 @@ storiesOf('Label', module)
   .add('Default', () => <Label text="Default Label" />)
   .add('With TextInput', () => (
     <Label text="With TextInput">
-      <TextInput />
+      <TextInput placeholder="Testing..." />
     </Label>
   ));

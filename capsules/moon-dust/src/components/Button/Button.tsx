@@ -20,11 +20,11 @@ const StyledButton = styled.button`
   `}
 `;
 
-export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-const Button: React.FC<IButtonProps> = props => {
+const Button: React.FC<IButton> = props => {
   return <StyledButton>{props.text}</StyledButton>;
 };
 

@@ -15,12 +15,12 @@ const StyledTextInput = styled.input`
   `}
 `;
 
-export interface ITextInputProps extends React.HTMLAttributes<HTMLInputElement> {
+export interface ITextInput extends React.HTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   type?: 'text' | 'password' | 'email' | 'number';
 }
 
-const TextInput: React.FC<ITextInputProps> = props => {
+const TextInput: React.FC<ITextInput> = props => {
   return <StyledTextInput placeholder={props.placeholder} type={props.type} />;
 };
 

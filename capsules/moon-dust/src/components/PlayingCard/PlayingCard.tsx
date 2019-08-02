@@ -19,12 +19,12 @@ const CardFace = styled(animated.div)`
   `}
 `;
 
-export interface IPlayingCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IPlayingCard extends React.HTMLAttributes<HTMLDivElement> {
   value: string;
   suit: string;
 }
 
-const PlayingCard: React.FC<IPlayingCardProps> = props => {
+const PlayingCard: React.FC<IPlayingCard> = props => {
   const [isFlipped, setFlipped] = useState(false);
 
   const { transform, opacity } = useSpring({

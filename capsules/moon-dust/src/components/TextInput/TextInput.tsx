@@ -4,18 +4,14 @@ import tw from 'tailwind.macro';
 
 const StyledTextInput = styled.input`
   ${tw`
-    rounded-lg
-    outline-none
+    rounded
     border-solid
-    border-4
-    border-purple-500
-    hover:border-purple-600
-    focus:border-purple-600
-    px-2
-    py-2
-    font-bold
+    border
+    border-gray-500
+    px-3
+    py-3
+    font-regular
     text-sm
-    shadow-md
   `}
 `;
 

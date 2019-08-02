@@ -17,6 +17,7 @@ const StyledButton = styled.button`
     text-sm
     text-white
     cursor-pointer
+    active:shadow-inner
   `}
 `;
 

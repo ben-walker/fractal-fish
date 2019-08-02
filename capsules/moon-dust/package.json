@@ -59,8 +59,8 @@
   "dependencies": {
     "apollo-boost": "^0.4.3",
     "graphql": "^14.4.2",
+    "initials": "^3.0.1",
     "navi": "^0.13.3",
-    "randomcolor": "^0.5.4",
     "react": "^16.8.6",
     "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6",

@@ -14,7 +14,7 @@ const StyledP = styled.p`
   ${tw`
     select-none
     text-base
-    font-semibold
+    font-medium
   `}
 `;
 

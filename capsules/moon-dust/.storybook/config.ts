@@ -1,5 +1,5 @@
 import { addDecorator, configure } from '@storybook/react';
-import GlobalStyleDecorator from './GlobalStyleDecorator';
+import StyleDecorator from './StyleDecorator';
 
 const req = require.context('../src/components', true, /.stories\.tsx$/);
 
@@ -7,5 +7,5 @@ function loadStories() {
   req.keys().forEach(req);
 }
 
-addDecorator(GlobalStyleDecorator);
+addDecorator(StyleDecorator);
 configure(loadStories, module);

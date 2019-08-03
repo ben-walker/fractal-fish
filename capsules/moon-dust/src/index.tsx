@@ -7,7 +7,6 @@ import apolloClient from './config/apollo-client';
 import socket from './config/socket';
 import * as serviceWorker from './serviceWorker';
 import GlobalStyle from './theme/global-style';
-import theme from './theme/styled-theme';
 
 const ComposedApp: React.FC = () => {
   socket.connect();
@@ -15,7 +14,7 @@ const ComposedApp: React.FC = () => {
   return (
     <ApolloProvider client={apolloClient}>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={{ mode: 'light' }}>
         <App />
       </ThemeProvider>
     </ApolloProvider>

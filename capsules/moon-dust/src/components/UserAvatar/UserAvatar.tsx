@@ -20,7 +20,7 @@ const StyledAvatar = styled.div`
     rounded-full
     items-center
     justify-center
-    font-medium
+    font-semibold
     select-none
     bg-transparent
     border-4

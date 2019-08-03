@@ -23,7 +23,7 @@ const StyledIcon = styled.div`
 `;
 
 export interface ITextButton extends React.HTMLAttributes<HTMLButtonElement> {
-  text: string;
+  text?: string;
   icon?: ReactNode;
 }
 

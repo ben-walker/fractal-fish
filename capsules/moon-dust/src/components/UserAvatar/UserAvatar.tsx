@@ -20,9 +20,12 @@ const StyledAvatar = styled.div`
     rounded-full
     items-center
     justify-center
-    font-semibold
+    font-medium
     select-none
-    bg-orange-400
+    bg-transparent
+    border-4
+    border-orange-500
+    border-solid
   `}
   width: ${(p: IUserAvatar) => `${p.size}rem`};
   height: ${(p: IUserAvatar) => `${p.size}rem`};
@@ -32,7 +35,11 @@ const StyledAvatar = styled.div`
 const UserAvatar: React.FC<IUserAvatar> = props => {
   const getInitials = (name: string) => initials(props.name).substring(0, maxInitialsChars);
 
-  return <StyledAvatar {...props}>{getInitials(props.name)}</StyledAvatar>;
+  return (
+    <StyledAvatar {...props}>
+      {props.src ? null : <div>{getInitials(props.name)}</div>}
+    </StyledAvatar>
+  );
 };
 
 export default UserAvatar;

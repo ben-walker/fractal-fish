@@ -1,3 +1,4 @@
+import { withKnobs } from '@storybook/addon-knobs';
 import { addDecorator, configure } from '@storybook/react';
 import StyleDecorator from './StyleDecorator';
 
@@ -8,4 +9,5 @@ function loadStories() {
 }
 
 addDecorator(StyleDecorator);
+addDecorator(withKnobs);
 configure(loadStories, module);

@@ -1,4 +1,4 @@
-import { optionsKnob as options, text } from '@storybook/addon-knobs';
+import { boolean, optionsKnob as options, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Button from './Button';
@@ -9,5 +9,6 @@ storiesOf('Button', module).add('Default', () => (
       display: 'select',
     })}
     text={text('Text', 'Default button')}
+    outlined={boolean('Outlined', false)}
   />
 ));

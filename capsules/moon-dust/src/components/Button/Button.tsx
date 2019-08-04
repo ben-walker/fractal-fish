@@ -3,17 +3,21 @@ import styled from 'styled-components/macro';
 import theme from 'styled-theming';
 import tw from 'tailwind.macro';
 
-const color = theme.variants('mode', 'variant', {
+const backgroundColor = theme.variants('mode', 'variant', {
   default: { light: '#96ACB7', dark: '' },
   primary: { light: '#0496FF', dark: '' },
 });
+
+export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
+  text: string;
+  variant?: 'default' | 'primary';
+  outlined?: boolean;
+}
 
 const StyledButton = styled.button`
   ${tw`
     outline-none
     select-none
-    border-4
-    border-solid
     px-4
     py-3
     m-3
@@ -21,21 +25,20 @@ const StyledButton = styled.button`
     font-semibold
     text-base
     cursor-pointer
+    border-solid
   `}
-  color: ${color};
-  border-color: ${color};
+  border-width: 3px;
+  border-color: ${backgroundColor};
+  background-color: ${(props: IButton) => (props.outlined ? 'transparent' : backgroundColor)};
+  color: ${(props: IButton) => (props.outlined ? backgroundColor : 'white')};
 `;
-
-export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
-  text: string;
-  variant?: 'default' | 'primary';
-}
 
 const Button: React.FC<IButton> = props => {
   return <StyledButton {...props}>{props.text}</StyledButton>;
 };
 
 Button.defaultProps = {
+  outlined: false,
   variant: 'default',
 };
 

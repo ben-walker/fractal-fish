@@ -19,13 +19,14 @@ const StyledButton = styled.button`
     outline-none
     select-none
     px-4
-    py-3
+    py-2
     m-3
     rounded
     font-semibold
     text-base
     cursor-pointer
     border-solid
+    hover:opacity-75
   `}
   border-width: 3px;
   border-color: ${backgroundColor};

@@ -8,28 +8,27 @@ const maxInitialsChars = 2;
 
 export interface IUserAvatar extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
-  size: number;
+  size?: number;
   src?: string;
 }
 
 const StyledAvatar = styled.div`
   ${tw`
     p-0
-    m-0
+    m-3
     flex
     rounded-full
     items-center
     justify-center
     font-semibold
     select-none
-    bg-transparent
-    border-4
-    border-orange-500
-    border-solid
+    text-white
   `}
+  background-color: #0496FF;
   width: ${(p: IUserAvatar) => `${p.size}rem`};
   height: ${(p: IUserAvatar) => `${p.size}rem`};
-  font-size: ${(p: IUserAvatar) => `${p.size * fontSizeMod}rem`};
+  font-size: ${(p: IUserAvatar) =>
+    typeof p.size === 'undefined' ? '5rem' : `${p.size * fontSizeMod}rem`};
 `;
 
 const UserAvatar: React.FC<IUserAvatar> = props => {
@@ -40,6 +39,10 @@ const UserAvatar: React.FC<IUserAvatar> = props => {
       {props.src ? null : <div>{getInitials(props.name)}</div>}
     </StyledAvatar>
   );
+};
+
+UserAvatar.defaultProps = {
+  size: 5,
 };
 
 export default UserAvatar;

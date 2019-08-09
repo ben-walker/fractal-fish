@@ -6,15 +6,14 @@ import variant from '../../theme/variant-map';
 const StyledTextInput = styled.input`
   ${tw`
     outline-none
-    rounded
-    border-solid
-    border
-    px-3
-    py-3
-    font-medium
+    rounded-none
+    border-0
+    border-b-2
+    px-2
+    py-2
+    font-regular
     text-base
   `}
-  border-width: 3px;
   border-color: ${variant};
 `;
 

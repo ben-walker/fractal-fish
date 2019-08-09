@@ -1,12 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components/macro';
-import theme from 'styled-theming';
 import tw from 'tailwind.macro';
-
-const color = theme.variants('mode', 'variant', {
-  default: { light: '#96ACB7', dark: '' },
-  primary: { light: '#0496FF', dark: '' },
-});
+import variant from '../../theme/variant-map';
 
 export interface ITextButton extends React.HTMLAttributes<HTMLButtonElement> {
   text?: string;
@@ -23,11 +18,10 @@ const StyledTextButton = styled.button`
     font-semibold
     text-base
     cursor-pointer
-    hover:opacity-75
     flex
     items-center
   `}
-  color: ${color};
+  color: ${variant};
 `;
 
 const StyledIcon = styled.div`

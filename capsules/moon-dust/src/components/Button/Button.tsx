@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import theme from 'styled-theming';
 import tw from 'tailwind.macro';
-
-const backgroundColor = theme.variants('mode', 'variant', {
-  default: { light: '#96ACB7', dark: '' },
-  primary: { light: '#0496FF', dark: '' },
-});
+import variant from '../../theme/variant-map';
 
 export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -26,12 +21,11 @@ const StyledButton = styled.button`
     text-base
     cursor-pointer
     border-solid
-    hover:opacity-75
   `}
   border-width: 3px;
-  border-color: ${backgroundColor};
-  background-color: ${(props: IButton) => (props.outlined ? 'transparent' : backgroundColor)};
-  color: ${(props: IButton) => (props.outlined ? backgroundColor : 'white')};
+  border-color: ${variant};
+  background-color: ${(props: IButton) => (props.outlined ? 'transparent' : variant)};
+  color: ${(props: IButton) => (props.outlined ? variant : 'white')};
 `;
 
 const Button: React.FC<IButton> = props => {

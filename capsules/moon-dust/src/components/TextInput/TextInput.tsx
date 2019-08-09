@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import theme from 'styled-theming';
 import tw from 'tailwind.macro';
-
-const color = theme.variants('mode', 'variant', {
-  default: { light: '#96ACB7', dark: '' },
-  primary: { light: '#0496FF', dark: '' },
-});
+import variant from '../../theme/variant-map';
 
 const StyledTextInput = styled.input`
   ${tw`
@@ -20,7 +15,7 @@ const StyledTextInput = styled.input`
     text-base
   `}
   border-width: 3px;
-  border-color: ${color};
+  border-color: ${variant};
 `;
 
 export interface ITextInput extends React.HTMLAttributes<HTMLInputElement> {

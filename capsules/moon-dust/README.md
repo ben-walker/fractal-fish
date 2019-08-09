@@ -11,7 +11,8 @@ Frontend React webapp.
 | Problem Area     | Solution                                                                                                |
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
 | Environment      | **[react](https://github.com/facebook/react/)**                                                         |
-| Framework        | [material-ui](https://material-ui.com/)/[grommet](https://v2.grommet.io/)                               |
+| Framework        | Custom with **[Tailwind CSS](https://tailwindcss.com/)**                                                |
 | State management | [redux](https://github.com/reduxjs/redux)/[react-apollo](https://github.com/apollographql/react-apollo) |
 | Data fetching    | [react-apollo](https://github.com/apollographql/react-apollo)                                           |
-| Routing          | [react-router](https://github.com/ReactTraining/react-router)                                           |
+| Routing          | **[react-navi](https://github.com/frontarm/navi)**                                                      |
+| Real-Time Data   | **[socket.io](https://github.com/socketio/socket.io)**                                                  |

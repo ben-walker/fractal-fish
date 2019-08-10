@@ -6,15 +6,15 @@ const StyledLabel = styled.div`
   ${tw`
     block
     text-left
-    m-4
+    m-3
   `}
 `;
 
 const StyledP = styled.p`
   ${tw`
     select-none
-    text-base
-    font-medium
+    text-lg
+    font-semibold
   `}
 `;
 

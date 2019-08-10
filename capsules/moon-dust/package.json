@@ -57,7 +57,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "apollo-boost": "^0.4.3",
+    "apollo-boost": "^0.4.4",
     "graphql": "^14.4.2",
     "initials": "^3.0.1",
     "navi": "^0.13.3",
@@ -67,7 +67,7 @@
     "react-feather": "^2.0.3",
     "react-navi": "^0.13.5",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.1.0",
     "react-spring": "^8.0.27",
     "socket.io-client": "^2.2.0",
     "styled-components": "^4.3.2",

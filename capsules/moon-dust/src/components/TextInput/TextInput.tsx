@@ -12,11 +12,18 @@ const StyledTextInput = styled.input`
     border-solid
     border
     border-gray-500
-    focus:border-black
-    focus:shadow-inner
+    focus:border-gray-700
     font-normal
     text-sm
   `}
+  ::placeholder {
+    color: gray;
+  }
+  :focus {
+    ::placeholder {
+      color: lightgray;
+    }
+  }
 `;
 
 export interface ITextInput extends React.HTMLAttributes<HTMLInputElement> {

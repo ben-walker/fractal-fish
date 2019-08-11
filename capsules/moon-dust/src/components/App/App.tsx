@@ -1,13 +1,17 @@
 import React from 'react';
-import styled from 'styled-components/macro';
-import tw from 'tailwind.macro';
-
-const StyledApp = styled.div`
-  ${tw``}
-`;
+import { ThemeProvider } from 'styled-components';
+import WindowDimensionsProvider from '../../providers/WindowDimensions/WindowDimensions';
+import GlobalStyle from '../../theme/global-style';
 
 const App: React.FC = () => {
-  return <StyledApp />;
+  return (
+    <>
+      <GlobalStyle />
+      <ThemeProvider theme={{ mode: 'light' }}>
+        <WindowDimensionsProvider />
+      </ThemeProvider>
+    </>
+  );
 };
 
 export default App;

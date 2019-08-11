@@ -1,37 +1,34 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 import variant from '../../theme/variant-map';
 
 export interface ITextButton extends React.HTMLAttributes<HTMLButtonElement> {
   text?: string;
-  icon?: ReactNode;
   variant?: 'default' | 'primary';
 }
 
 const StyledTextButton = styled.button`
   ${tw`
+    m-3
     outline-none
     select-none
     border-none
     bg-transparent
-    font-semibold
+    font-medium
     text-base
     cursor-pointer
     flex
     items-center
+    hover:underline
   `}
   color: ${variant};
-`;
-
-const StyledIcon = styled.div`
-  padding-right: 0.3rem;
 `;
 
 const TextButton: React.FC<ITextButton> = props => {
   return (
     <StyledTextButton {...props}>
-      {props.icon && <StyledIcon>{props.icon}</StyledIcon>}
+      {props.children}
       {props.text}
     </StyledTextButton>
   );

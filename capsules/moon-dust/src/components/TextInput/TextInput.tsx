@@ -5,17 +5,17 @@ import tw from 'tailwind.macro';
 const StyledTextInput = styled.input`
   ${tw`
     m-3
+    px-3
+    py-3
     outline-none
-    rounded-none
+    rounded-sm
     border-solid
     border
     border-gray-500
     focus:border-black
-    focus:shadow
-    px-3
-    py-3
-    font-regular
-    text-base
+    focus:shadow-inner
+    font-normal
+    text-sm
   `}
 `;
 

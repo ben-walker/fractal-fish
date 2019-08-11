@@ -4,12 +4,12 @@ import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 
 const fontSizeMod = 1 / 3;
-const maxInitialsChars = 2;
 
 export interface IUserAvatar extends React.HTMLAttributes<HTMLDivElement> {
   name: string;
   size?: number;
   src?: string;
+  maxChars?: number;
 }
 
 const StyledAvatar = styled.div`
@@ -32,7 +32,7 @@ const StyledAvatar = styled.div`
 `;
 
 const UserAvatar: React.FC<IUserAvatar> = props => {
-  const getInitials = (name: string) => initials(props.name).substring(0, maxInitialsChars);
+  const getInitials = (name: string) => initials(name).substring(0, props.maxChars);
 
   return (
     <StyledAvatar {...props}>
@@ -42,6 +42,7 @@ const UserAvatar: React.FC<IUserAvatar> = props => {
 };
 
 UserAvatar.defaultProps = {
+  maxChars: 2,
   size: 5,
 };
 

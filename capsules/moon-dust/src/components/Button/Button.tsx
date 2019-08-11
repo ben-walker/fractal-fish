@@ -11,18 +11,18 @@ export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
 
 const StyledButton = styled.button`
   ${tw`
-    outline-none
-    select-none
+    m-3
     px-4
     py-2
-    m-3
-    rounded
-    font-semibold
+    rounded-sm
+    outline-none
+    select-none
+    font-medium
     text-base
     cursor-pointer
+    border-2
     border-solid
   `}
-  border-width: 3px;
   border-color: ${variant};
   background-color: ${(props: IButton) => (props.outlined ? 'transparent' : variant)};
   color: ${(props: IButton) => (props.outlined ? variant : 'white')};

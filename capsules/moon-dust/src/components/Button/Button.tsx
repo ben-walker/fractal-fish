@@ -22,6 +22,7 @@ const StyledButton = styled.button`
     cursor-pointer
     border-2
     border-solid
+    hover:underline
   `}
   border-color: ${variant};
   background-color: ${(props: IButton) => (props.outlined ? 'transparent' : variant)};

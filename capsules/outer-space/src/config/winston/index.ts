@@ -1,10 +1,13 @@
 import * as appRootPath from 'app-root-path';
 import { existsSync, mkdirSync } from 'fs';
 import { createLogger, format, transports } from 'winston';
+import * as winstonDailyRotateFile from 'winston-daily-rotate-file';
 
 const { combine, colorize, timestamp, json, printf } = format;
 const env = process.env.NODE_ENV || 'development';
 const logDir = `${appRootPath}/logs`;
+const datePattern = 'YYYY-MM-DD';
+const retainDays = '3d';
 
 if (!existsSync(logDir)) {
   mkdirSync(logDir);
@@ -12,23 +15,29 @@ if (!existsSync(logDir)) {
 
 const logger = createLogger({
   exceptionHandlers: [
-    new transports.File({
+    new winstonDailyRotateFile({
+      datePattern,
       dirname: logDir,
-      filename: 'exceptions.log',
+      filename: '%DATE%-exceptions.log',
+      maxFiles: retainDays,
     }),
   ],
   format: combine(json(), timestamp()),
   level: env === 'development' ? 'debug' : 'info',
   transports: [
-    new transports.File({
+    new winstonDailyRotateFile({
+      datePattern,
       dirname: logDir,
-      filename: 'error.log',
+      filename: '%DATE%-error.log',
       level: 'error',
+      maxFiles: retainDays,
     }),
-    new transports.File({
+    new winstonDailyRotateFile({
+      datePattern,
       dirname: logDir,
-      filename: 'combined.log',
+      filename: '%DATE%-combined.log',
       level: 'info',
+      maxFiles: retainDays,
     }),
   ],
 });

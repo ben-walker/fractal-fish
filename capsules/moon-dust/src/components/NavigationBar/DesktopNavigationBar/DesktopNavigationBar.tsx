@@ -5,7 +5,7 @@ import tw from 'tailwind.macro';
 const StyledDesktopNavigationBar = styled.ul`
   ${tw`
     fixed
-    bottom-o
+    bottom-0
     left-0
     h-full
     w-56

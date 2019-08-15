@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu } from 'react-feather';
+import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 
@@ -13,13 +14,35 @@ const ToggleContainer = styled.div`
   `}
 `;
 
+const SideBar = styled(animated.div)`
+  ${tw`
+    fixed
+    bottom-0
+    left-0
+    h-full
+    p-0
+    m-0
+    bg-gray-100
+    shadow
+  `}
+  list-style-type: none;
+`;
+
 const MobileNavigationBar: React.FC = props => {
   const [open, setOpen] = useState(false);
 
+  const spring = useSpring({
+    config: config.default,
+    width: open ? '14rem' : '0rem',
+  });
+
   return (
-    <ToggleContainer onClick={() => setOpen(!open)}>
-      <Menu color="#4a5568" />
-    </ToggleContainer>
+    <>
+      <ToggleContainer onClick={() => setOpen(!open)}>
+        <Menu color="#4a5568" />
+      </ToggleContainer>
+      <SideBar style={spring} />
+    </>
   );
 };
 

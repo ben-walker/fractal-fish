@@ -1,4 +1,5 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import * as forkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackBuildNotifier from 'webpack-build-notifier';
@@ -24,7 +25,13 @@ const config: webpack.Configuration = {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
-  plugins: [new CleanWebpackPlugin(), new webpackBuildNotifier()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new forkTsCheckerWebpackPlugin({
+      tslint: true,
+    }),
+    new webpackBuildNotifier(),
+  ],
   resolve: {
     extensions: ['.ts', '.js'],
   },

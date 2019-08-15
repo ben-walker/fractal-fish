@@ -1,19 +1,15 @@
 import * as dotenvWebpack from 'dotenv-webpack';
-import * as forkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import * as nodemonWebpackPlugin from 'nodemon-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
 import webpackCommon from './webpack.common';
 
-const config: webpack.Configuration = {
+const config: webpack.Configuration = webpackMerge(webpackCommon, {
   devtool: 'inline-source-map',
   mode: 'development',
   plugins: [
     new dotenvWebpack(),
-    new forkTsCheckerWebpackPlugin({
-      tslint: true,
-    }),
     new nodemonWebpackPlugin({
       env: {
         quiet: true,
@@ -23,6 +19,6 @@ const config: webpack.Configuration = {
     }),
   ],
   watch: true,
-};
+});
 
-export default webpackMerge(webpackCommon, config);
+export default config;

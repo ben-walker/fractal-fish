@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import WindowDimensionsProvider from '../src/providers/WindowDimensions/WindowDimensions';
+import WindowDimensionsProvider from '../src/hooks/WindowDimensions/WindowDimensions';
 import GlobalStyle from '../src/theme/global-style';
 
 const StyleDecorator = (storyFn: any) => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useWindowDimensions } from '../../providers/WindowDimensions/WindowDimensions';
+import { useWindowDimensions } from '../../hooks/WindowDimensions/WindowDimensions';
 
 export interface IResponsiveLayout {
   breakpoint: number;

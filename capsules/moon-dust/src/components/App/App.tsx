@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import WindowDimensionsProvider from '../../providers/WindowDimensions/WindowDimensions';
+import WindowDimensionsProvider from '../../hooks/WindowDimensions/WindowDimensions';
 import GlobalStyle from '../../theme/global-style';
 
 const App: React.FC = () => {

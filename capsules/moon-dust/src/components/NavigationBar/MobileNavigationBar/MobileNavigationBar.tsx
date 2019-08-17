@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Menu } from 'react-feather';
 import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
+import { useComponentVisible } from '../../../hooks/ComponentVisible/ComponentVisible';
 
 const ToggleContainer = styled.div`
   ${tw`
@@ -29,7 +30,7 @@ const SideBar = styled(animated.div)`
 `;
 
 const MobileNavigationBar: React.FC = props => {
-  const [open, setOpen] = useState(false);
+  const { ref, open, setOpen } = useComponentVisible(false);
 
   const spring = useSpring({
     config: config.default,
@@ -38,10 +39,10 @@ const MobileNavigationBar: React.FC = props => {
 
   return (
     <>
-      <ToggleContainer onClick={() => setOpen(!open)}>
+      <ToggleContainer onClick={() => setOpen(true)}>
         <Menu color="#4a5568" />
       </ToggleContainer>
-      <SideBar style={spring} />
+      <SideBar ref={ref} style={spring} />
     </>
   );
 };

@@ -38,7 +38,9 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
       <CardFace
         style={{
           backgroundColor: 'green',
-          opacity: opacity.interpolate(o => 1 - o),
+          opacity: opacity.interpolate(o =>
+            typeof o === 'undefined' ? 1 : 1 - parseInt(o.toString(), 10)
+          ),
           transform,
         }}
       />

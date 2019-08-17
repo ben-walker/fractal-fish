@@ -5,7 +5,7 @@ import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 import { useComponentVisible } from '../../../hooks/ComponentVisible/ComponentVisible';
 
-const ToggleContainer = styled.div`
+const StyledMenu = styled(Menu)`
   ${tw`
     fixed
     top-0
@@ -13,6 +13,7 @@ const ToggleContainer = styled.div`
     m-3
     cursor-pointer
   `}
+  color: #4a5568;
 `;
 
 const SideBar = styled(animated.div)`
@@ -39,9 +40,7 @@ const MobileNavigationBar: React.FC = props => {
 
   return (
     <>
-      <ToggleContainer onClick={() => setOpen(true)}>
-        <Menu color="#4a5568" />
-      </ToggleContainer>
+      <StyledMenu onClick={() => setOpen(true)} />
       <SideBar ref={ref} style={spring} />
     </>
   );

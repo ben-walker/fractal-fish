@@ -3,14 +3,22 @@ import ResponsiveLayout from '../ResponsiveLayout/ResponsiveLayout';
 import DesktopNavigationBar from './DesktopNavigationBar/DesktopNavigationBar';
 import MobileNavigationBar from './MobileNavigationBar/MobileNavigationBar';
 
-const NavigationBar: React.FC = props => {
+export interface INavigationBar {
+  breakpoint?: number;
+}
+
+const NavigationBar: React.FC<INavigationBar> = props => {
   return (
     <ResponsiveLayout
-      breakpoint={1024}
+      breakpoint={props.breakpoint || 0}
       desktop={() => <DesktopNavigationBar {...props} />}
       mobile={() => <MobileNavigationBar {...props} />}
     />
   );
+};
+
+NavigationBar.defaultProps = {
+  breakpoint: 1024,
 };
 
 export default NavigationBar;

@@ -23,9 +23,9 @@ const SideBar = styled(animated.div)`
     h-full
     p-0
     m-0
-    bg-gray-100
     shadow
   `}
+  background-color: #f7f9fa;
   list-style-type: none;
 `;
 

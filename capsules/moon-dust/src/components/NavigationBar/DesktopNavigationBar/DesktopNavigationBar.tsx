@@ -11,8 +11,8 @@ const StyledDesktopNavigationBar = styled.ul`
     w-56
     p-0
     m-0
-    bg-gray-100
   `}
+  background-color: #f7f9fa;
   list-style-type: none;
 `;
 

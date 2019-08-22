@@ -11,6 +11,6 @@ storiesOf('TextButton', module).add('Default', () => (
     })}
     text={text('Text', 'Default Button')}
   >
-    <Bluetooth size={17} />
+    <Bluetooth size={15} />
   </TextButton>
 ));

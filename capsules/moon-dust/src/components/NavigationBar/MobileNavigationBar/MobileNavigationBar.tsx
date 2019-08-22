@@ -32,10 +32,11 @@ const SideBar = styled(animated.div)`
 
 const MobileNavigationBar: React.FC = props => {
   const { ref, open, setOpen } = useComponentVisible(false);
+  const [closedWidth, openWidth] = ['0rem', '14rem'];
 
   const spring = useSpring({
     config: config.default,
-    width: open ? '14rem' : '0rem',
+    width: open ? openWidth : closedWidth,
   });
 
   return (

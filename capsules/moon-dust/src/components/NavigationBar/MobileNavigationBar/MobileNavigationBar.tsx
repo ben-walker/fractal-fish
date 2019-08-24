@@ -25,9 +25,9 @@ const SideBar = styled(animated.div)`
     p-0
     m-0
     shadow
+    list-none
   `}
   background-color: #f7f9fa;
-  list-style-type: none;
 `;
 
 const MobileNavigationBar: React.FC = props => {

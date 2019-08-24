@@ -11,12 +11,12 @@ const StyledCardFace = styled.div`
     rounded-sm
     cursor-pointer
     shadow
-    hover:shadow-md
+    bg-white
   `}
 `;
 
 const CardFace: React.FC<React.HTMLAttributes<HTMLDivElement>> = props => {
-  return <StyledCardFace />;
+  return <StyledCardFace {...props} />;
 };
 
 export default CardFace;

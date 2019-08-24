@@ -5,6 +5,7 @@ import tw from 'tailwind.macro';
 const StyledCardFace = styled.div`
   ${tw`
     absolute
+    flex
     w-32
     h-48
     rounded-sm

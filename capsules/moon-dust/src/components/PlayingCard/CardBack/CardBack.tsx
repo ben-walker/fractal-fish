@@ -15,7 +15,7 @@ const StyledCardBack = styled.div`
     rounded-sm
     cursor-pointer
     shadow
-    hover:shadow-md
+    bg-white
     bg-center
     bg-no-repeat
   `}

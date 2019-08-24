@@ -10,10 +10,11 @@ const AnimatedCardFace = animated(CardFace);
 export interface IPlayingCard extends React.HTMLAttributes<HTMLDivElement> {
   value: string;
   suit: string;
+  isFlippedInitially?: boolean;
 }
 
 const PlayingCard: React.FC<IPlayingCard> = props => {
-  const [isFlipped, setFlipped] = useState(false);
+  const [isFlipped, setFlipped] = useState(props.isFlippedInitially);
 
   const { transform, opacity } = useSpring({
     config: config.default,
@@ -41,6 +42,10 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
       />
     </div>
   );
+};
+
+PlayingCard.defaultProps = {
+  isFlippedInitially: false,
 };
 
 export default PlayingCard;

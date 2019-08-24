@@ -1,23 +1,11 @@
 import React, { useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
-import styled from 'styled-components/macro';
-import tw from 'tailwind.macro';
+import logo from '../../assets/logo.svg'; // TODO: Make card back art configurable
+import CardBack from './CardBack/CardBack';
+import CardFace from './CardFace/CardFace';
 
-const StyledPlayingCard = styled.div``;
-
-const CardFace = styled(animated.div)`
-  ${tw`
-    m-4
-    w-32
-    h-48
-    rounded
-    shadow-lg
-    cursor-pointer
-    bg-cover
-    bg-transparent
-    absolute
-  `}
-`;
+const AnimatedCardBack = animated(CardBack);
+const AnimatedCardFace = animated(CardFace);
 
 export interface IPlayingCard extends React.HTMLAttributes<HTMLDivElement> {
   value: string;
@@ -28,30 +16,30 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
   const [isFlipped, setFlipped] = useState(false);
 
   const { transform, opacity } = useSpring({
-    config: config.slow,
-    opacity: isFlipped ? 1 : 0,
-    transform: `rotateY(${isFlipped ? 180 : 0}deg)`,
+    config: config.default,
+    opacity: isFlipped ? 0 : 1,
+    transform: `rotateY(${isFlipped ? 0 : 180}deg)`,
   });
 
   return (
-    <StyledPlayingCard onClick={() => setFlipped(state => !state)}>
-      <CardFace
+    <div onClick={() => setFlipped(state => !state)}>
+      <AnimatedCardBack
         style={{
-          backgroundColor: 'green',
+          boxShadow: isFlipped ? undefined : 'none',
           opacity: opacity.interpolate(o =>
             typeof o === 'undefined' ? 1 : 1 - parseInt(o.toString(), 10)
           ),
           transform,
         }}
+        src={logo}
       />
-      <CardFace
+      <AnimatedCardFace
         style={{
-          backgroundColor: 'blue',
           opacity,
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),
         }}
       />
-    </StyledPlayingCard>
+    </div>
   );
 };
 

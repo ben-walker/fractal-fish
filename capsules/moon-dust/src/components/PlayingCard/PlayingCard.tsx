@@ -31,14 +31,14 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
     transform: `rotateY(${isFlipped ? 0 : 180}deg)`,
   });
 
+  const interpolateOpacity = (o: any) => (typeof o === 'number' ? 1 - o : 1);
+
   return (
     <StyledCard onClick={() => setFlipped(state => !state)}>
       <AnimatedCardBack
         style={{
           boxShadow: isFlipped ? undefined : 'none',
-          opacity: opacity.interpolate(
-            o => (typeof o === 'undefined' ? 1 : 1 - parseInt(o.toString(), 10)) // TODO: move this logic to a function
-          ),
+          opacity: opacity.interpolate(o => interpolateOpacity(o)),
           transform,
         }}
         display={BackDisplay}

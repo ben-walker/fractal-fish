@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
+import styled from 'styled-components/macro';
+import tw from 'tailwind.macro';
 import logo from '../../assets/logo.svg'; // TODO: Make card back art configurable
 import CardBack from './CardBack/CardBack';
 import CardFace from './CardFace/CardFace';
 
 const AnimatedCardBack = animated(CardBack);
 const AnimatedCardFace = animated(CardFace);
+
+const StyledCard = styled.div`
+  ${tw`
+    m-3
+    cursor-pointer
+  `}
+`;
 
 export interface IPlayingCard extends React.HTMLAttributes<HTMLDivElement> {
   value: string;
@@ -23,12 +32,12 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
   });
 
   return (
-    <div onClick={() => setFlipped(state => !state)}>
+    <StyledCard onClick={() => setFlipped(state => !state)}>
       <AnimatedCardBack
         style={{
           boxShadow: isFlipped ? undefined : 'none',
-          opacity: opacity.interpolate(o =>
-            typeof o === 'undefined' ? 1 : 1 - parseInt(o.toString(), 10)
+          opacity: opacity.interpolate(
+            o => (typeof o === 'undefined' ? 1 : 1 - parseInt(o.toString(), 10)) // TODO: move this logic to a function
           ),
           transform,
         }}
@@ -40,7 +49,7 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
           transform: transform.interpolate(t => `${t} rotateY(180deg)`),
         }}
       />
-    </div>
+    </StyledCard>
   );
 };
 

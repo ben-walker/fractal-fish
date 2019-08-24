@@ -2,8 +2,13 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 
-const StyledCardBack = styled.img`
+export interface ICardBack extends React.HTMLAttributes<HTMLDivElement> {
+  src: string;
+}
+
+const StyledCardBack = styled.div`
   ${tw`
+    absolute
     m-3
     w-32
     h-48
@@ -11,15 +16,14 @@ const StyledCardBack = styled.img`
     cursor-pointer
     shadow
     hover:shadow-md
+    bg-center
+    bg-no-repeat
   `}
+  background-image: url(${(props: ICardBack) => props.src});
 `;
 
-export interface ICardBack {
-  src: string;
-}
-
 const CardBack: React.FC<ICardBack> = props => {
-  return <StyledCardBack src={props.src} />;
+  return <StyledCardBack {...props} />;
 };
 
 export default CardBack;

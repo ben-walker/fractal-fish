@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
-import logo from '../../assets/logo.svg'; // TODO: Make card back art configurable
+import { ReactComponent as BackDisplay } from '../../assets/logo.svg'; // TODO: Make card back art configurable
 import CardBack from './CardBack/CardBack';
 import CardFace from './CardFace/CardFace';
 
@@ -41,7 +41,7 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
           ),
           transform,
         }}
-        src={logo}
+        display={BackDisplay}
       />
       <AnimatedCardFace
         style={{

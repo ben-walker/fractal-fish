@@ -13,7 +13,7 @@ const StyledCardBack = styled.div`
     w-32
     h-48
     rounded-sm
-    shadow
+    shadow-md
     bg-white
   `}
 `;

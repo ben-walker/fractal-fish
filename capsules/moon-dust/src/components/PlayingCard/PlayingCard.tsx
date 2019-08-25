@@ -6,9 +6,6 @@ import { ReactComponent as BackDisplay } from '../../assets/logo.svg'; // TODO: 
 import CardBack from './CardBack/CardBack';
 import CardFace from './CardFace/CardFace';
 
-const AnimatedCardBack = animated(CardBack);
-const AnimatedCardFace = animated(CardFace);
-
 const StyledCard = styled.div`
   ${tw`
     m-3
@@ -23,6 +20,8 @@ export interface IPlayingCard extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const PlayingCard: React.FC<IPlayingCard> = props => {
+  const [AnimatedCardBack, AnimatedCardFace] = [animated(CardBack), animated(CardFace)];
+
   const [isFlipped, setFlipped] = useState(props.isFlippedInitially);
 
   const { transform, opacity } = useSpring({

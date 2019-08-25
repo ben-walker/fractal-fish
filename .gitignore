@@ -1,2 +1,5 @@
 # Dependencies
 node_modules/
+
+# Local
+.DS_Store

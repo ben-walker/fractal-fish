@@ -6,10 +6,6 @@ module.exports = async ({ config }) => {
       options: {
         presets: [['react-app', { flow: false, typescript: true }]],
       },
-    },
-    {
-      test: /\.svg$/,
-      use: ['@svgr/webpack', 'url-loader'],
     }
   );
 

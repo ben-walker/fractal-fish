@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-storybook": "build-storybook -c .storybook --loglevel warn"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

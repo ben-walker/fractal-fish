@@ -45,7 +45,7 @@
     "@types/styled-components": "^4.1.18",
     "@types/styled-theming": "^2.2.2",
     "babel-plugin-styled-components": "^1.10.6",
-    "lint-staged": "^9.2.3",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
     "tailwind.macro": "^1.0.0-alpha.10",
     "ts-loader": "^6.0.4",
@@ -54,7 +54,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.6.2"
   },
   "dependencies": {
     "apollo-boost": "^0.4.4",

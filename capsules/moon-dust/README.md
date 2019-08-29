@@ -4,7 +4,9 @@
 
 Frontend React webapp.
 
-Check out all the components at <https://trusting-galileo-343696.netlify.com>
+## Component Preview
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/34cd57c1-eeae-4035-8df9-ff732decbeb8/deploy-status)](https://sleepy-noether-73f816.netlify.com)
 
 ## The Stack
 

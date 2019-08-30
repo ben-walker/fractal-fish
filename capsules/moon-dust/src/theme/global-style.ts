@@ -1,10 +1,10 @@
-// TODO: Import and use font from typeface npm package
 import { createGlobalStyle } from 'styled-components/macro';
+import 'typeface-ibm-plex-sans';
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

@@ -1,31 +1,37 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
-import variant from '../../theme/variant-map';
+import { buttonHoverVariant, buttonVariant } from '../../theme/variant-map';
 
 export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
   text: string;
   variant?: 'default' | 'primary';
-  outlined?: boolean;
+  filled?: boolean;
 }
 
 const StyledButton = styled.button`
   ${tw`
     m-3
-    px-4
-    py-2
-    rounded-sm
+    px-5
+    py-3
+    rounded-none
     outline-none
     select-none
     font-medium
     text-base
     cursor-pointer
-    border-2
+    border
     border-solid
   `}
-  border-color: ${variant};
-  background-color: ${(props: IButton) => (props.outlined ? 'transparent' : variant)};
-  color: ${(props: IButton) => (props.outlined ? variant : 'white')};
+
+  color: ${(props: IButton) => (props.filled ? 'white' : '#2d3748')};
+  border-color: ${buttonVariant};
+  background-color: ${(props: IButton) => (props.filled ? buttonVariant : 'transparent')};
+
+  :hover {
+    border-color: ${buttonHoverVariant};
+    background-color: ${(props: IButton) => (props.filled ? buttonHoverVariant : 'transparent')};
+  }
 `;
 
 const Button: React.FC<IButton> = props => {
@@ -33,7 +39,7 @@ const Button: React.FC<IButton> = props => {
 };
 
 Button.defaultProps = {
-  outlined: false,
+  filled: false,
   variant: 'default',
 };
 

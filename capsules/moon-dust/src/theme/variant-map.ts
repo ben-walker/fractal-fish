@@ -1,8 +1,13 @@
 import theme from 'styled-theming';
 
-const variantMap: theme.VariantMap = {
-  default: { light: '#96acb7', dark: '' },
-  primary: { light: '#0496ff', dark: '' },
-};
+const [mode, variant] = ['mode', 'variant'];
 
-export default theme.variants('mode', 'variant', variantMap);
+export const buttonVariant = theme.variants(mode, variant, {
+  default: { light: '#a8a8a8', dark: '' },
+  primary: { light: '#0496ff', dark: '' },
+});
+
+export const buttonHoverVariant = theme.variants(mode, variant, {
+  default: { light: '#525252', dark: '' },
+  primary: { light: '#0586e3', dark: '' },
+});

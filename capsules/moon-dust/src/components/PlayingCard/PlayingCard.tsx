@@ -8,7 +8,6 @@ import CardFace from './CardFace/CardFace';
 
 const StyledCard = styled.div`
   ${tw`
-    m-3
     cursor-pointer
   `}
 `;

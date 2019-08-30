@@ -4,7 +4,6 @@ import tw from 'tailwind.macro';
 
 const StyledTextInput = styled.input`
   ${tw`
-    m-3
     px-3
     py-3
     outline-none

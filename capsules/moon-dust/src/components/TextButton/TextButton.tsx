@@ -10,7 +10,6 @@ export interface ITextButton extends React.HTMLAttributes<HTMLButtonElement> {
 
 const StyledTextButton = styled.button`
   ${tw`
-    m-3
     outline-none
     select-none
     border-none

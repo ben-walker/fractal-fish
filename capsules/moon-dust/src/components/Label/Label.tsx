@@ -6,7 +6,6 @@ const StyledLabel = styled.div`
   ${tw`
     block
     text-left
-    m-3
   `}
 `;
 

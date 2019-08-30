@@ -15,7 +15,6 @@ export interface IUserAvatar extends React.HTMLAttributes<HTMLDivElement> {
 const StyledAvatar = styled.div`
   ${tw`
     p-0
-    m-3
     flex
     rounded-full
     items-center

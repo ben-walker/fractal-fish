@@ -1,3 +1,4 @@
+// TODO: Import and use font from typeface npm package
 import { createGlobalStyle } from 'styled-components/macro';
 
 const GlobalStyle = createGlobalStyle`

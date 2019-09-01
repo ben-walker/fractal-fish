@@ -9,11 +9,12 @@ const StyledLabel = styled.div`
   `}
 `;
 
+// TODO: Text size should be a prop (variant map?)
 const StyledP = styled.p`
   ${tw`
     select-none
-    text-lg
-    font-semibold
+    text-xl
+    font-normal
   `}
 `;
 

@@ -8,8 +8,8 @@ const StyledCardFace = styled.div`
     flex
     w-32
     h-48
-    rounded-sm
-    shadow-md
+    rounded-none
+    shadow
     bg-white
   `}
 `;

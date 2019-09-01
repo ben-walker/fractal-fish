@@ -14,5 +14,8 @@ storiesOf('TextInput', module).add('Default', () => (
         display: 'select',
       }
     )}
+    variant={options('Variant', { default: 'default' }, 'default', {
+      display: 'select',
+    })}
   />
 ));

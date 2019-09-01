@@ -1,24 +1,28 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
+import { textInputFocusVariant, textInputVariant } from '../../theme/variant-map';
 
 const StyledTextInput = styled.input`
   ${tw`
-    px-3
+    flex
+    px-5
     py-3
     outline-none
-    rounded-sm
+    rounded-none
     border-solid
     border
-    border-gray-500
-    focus:border-gray-700
     font-normal
-    text-sm
+    text-base
   `}
+
+  border-color: ${textInputVariant};
+
   ::placeholder {
     color: gray;
   }
   :focus {
+    border-color: ${textInputFocusVariant};
     ::placeholder {
       color: lightgray;
     }
@@ -28,6 +32,7 @@ const StyledTextInput = styled.input`
 export interface ITextInput extends React.HTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   type?: 'text' | 'password' | 'email' | 'number';
+  variant?: 'default';
 }
 
 const TextInput: React.FC<ITextInput> = props => {
@@ -36,6 +41,7 @@ const TextInput: React.FC<ITextInput> = props => {
 
 TextInput.defaultProps = {
   type: 'text',
+  variant: 'default',
 };
 
 export default TextInput;

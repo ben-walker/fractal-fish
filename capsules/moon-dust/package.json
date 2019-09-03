@@ -34,7 +34,7 @@
     "@storybook/react": "^5.1.11",
     "@storybook/theming": "^5.1.11",
     "@types/jest": "^24.0.18",
-    "@types/node": "12.7.2",
+    "@types/node": "12.7.3",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@types/react-router-dom": "^4.3.5",
@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "apollo-boost": "^0.4.4",
-    "graphql": "^14.5.3",
+    "graphql": "^14.5.4",
     "initials": "^3.0.1",
     "navi": "^0.13.6",
     "react": "^16.9.0",

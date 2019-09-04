@@ -16,7 +16,7 @@ const StyledButton = styled.button`
     rounded-none
     outline-none
     select-none
-    font-medium
+    font-normal
     text-base
     cursor-pointer
     border

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components/macro';
 import 'typeface-ibm-plex-sans';
 
+// TODO: Investigate why fonts look like ass on Windows
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;

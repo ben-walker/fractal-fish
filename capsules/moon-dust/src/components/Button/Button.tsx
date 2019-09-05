@@ -12,7 +12,7 @@ export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
 const StyledButton = styled.button`
   ${tw`
     px-5
-    py-3
+    py-2
     rounded
     outline-none
     select-none

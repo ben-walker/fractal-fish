@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
-import { buttonHoverVariant, buttonVariant } from '../../theme/variant-map';
+import { buttonVariant } from '../../theme/variant-map';
 
 export interface ITextButton extends React.HTMLAttributes<HTMLButtonElement> {
   text?: string;
@@ -20,12 +20,7 @@ const StyledTextButton = styled.button`
     flex
     items-center
   `}
-
   color: ${buttonVariant};
-
-  :hover {
-    color: ${buttonHoverVariant};
-  }
 `;
 
 const TextButton: React.FC<ITextButton> = props => {

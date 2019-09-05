@@ -7,11 +7,6 @@ export const buttonVariant = theme.variants(mode, variant, {
   primary: { light: '#0496ff', dark: '' },
 });
 
-export const buttonHoverVariant = theme.variants(mode, variant, {
-  default: { light: '#525252', dark: '' },
-  primary: { light: '#0586e3', dark: '' },
-});
-
 export const textInputVariant = theme.variants(mode, variant, {
   default: { light: '#a8a8a8', dark: '' },
 });

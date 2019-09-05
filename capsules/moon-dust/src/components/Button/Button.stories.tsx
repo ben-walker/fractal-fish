@@ -9,6 +9,6 @@ storiesOf('Button', module).add('Default', () => (
       display: 'select',
     })}
     text={text('Text', 'Default button')}
-    filled={boolean('Filled', false)}
+    outlined={boolean('Outlined', false)}
   />
 ));

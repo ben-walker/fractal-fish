@@ -1,51 +1,72 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'react-feather';
+import { Menu, X } from 'react-feather';
 import { animated, config, useSpring } from 'react-spring';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 
-const OverlayToggle = styled(animated(ChevronDown))`
+const OverlayOpen = styled(Menu)`
   ${tw`
     fixed
     top-0
     left-0
-    m-2
+    m-3
     cursor-pointer
-    z-10
   `}
   color: #525252;
 `;
 
-const Overlay = styled(animated.div)`
+const OverlayClose = styled(X)`
   ${tw`
+    top-0
+    left-0
+    m-1
+    cursor-pointer
+  `}
+  color: #525252;
+`;
+
+const OverlayWrapper = styled(animated.div)`
+  ${tw`
+    items-center
+    justify-center
     fixed
     top-0
+    left-0
     w-full
-    p-0
-    m-0
-    list-none
+    h-full
   `}
-  background-color: #f7f9fa;
+`;
+
+const Overlay = styled.div`
+  ${tw`
+    inline-block
+    p-0
+    list-none
+    shadow-2xl
+    rounded
+    bg-white
+  `}
+  height: 97%;
+  width: 95%;
 `;
 
 const MobileNavigationBar: React.FC = props => {
   const [open, setOpen] = useState(false);
-  const [closedHeight, openHeight] = ['0%', '100%'];
 
-  const overlaySpring = useSpring({
-    config: config.default,
-    height: open ? openHeight : closedHeight,
-  });
-
-  const toggleSpring = useSpring({
+  const fadeSpring = useSpring({
     config: config.stiff,
-    transform: `rotate(${open ? 180 : 0}deg)`,
+    display: open ? 'flex' : 'none',
+    opacity: open ? 1 : 0,
   });
 
   return (
     <>
-      <OverlayToggle style={toggleSpring} onClick={() => setOpen(state => !state)} />
-      <Overlay style={overlaySpring} />
+      <OverlayOpen onClick={() => setOpen(true)} />
+      <OverlayWrapper style={fadeSpring}>
+        <Overlay>
+          <OverlayClose onClick={() => setOpen(false)} />
+        </Overlay>
+      </OverlayWrapper>
     </>
   );
 };

@@ -25,7 +25,7 @@
     "build-storybook": "build-storybook -c .storybook --quiet"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
+    "@babel/core": "^7.6.0",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-knobs": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
@@ -62,7 +62,7 @@
     "initials": "^3.0.1",
     "navi": "^0.13.6",
     "react": "^16.9.0",
-    "react-apollo": "^3.0.1",
+    "react-apollo": "^3.1.0",
     "react-dom": "^16.9.0",
     "react-feather": "^2.0.3",
     "react-navi": "^0.13.6",

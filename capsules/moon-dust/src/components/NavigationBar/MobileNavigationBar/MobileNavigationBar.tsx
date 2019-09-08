@@ -27,7 +27,6 @@ const OverlayClose = styled(X)`
 
 const OverlayWrapper = styled(animated.div)`
   ${tw`
-    items-center
     justify-center
     fixed
     top-0
@@ -39,15 +38,16 @@ const OverlayWrapper = styled(animated.div)`
 
 const Overlay = styled.div`
   ${tw`
-    inline-block
+    mt-2
+    flex
     p-0
     list-none
     shadow-2xl
     rounded
     bg-white
   `}
-  height: 97%;
   width: 95%;
+  height: 60%;
 `;
 
 const MobileNavigationBar: React.FC = props => {

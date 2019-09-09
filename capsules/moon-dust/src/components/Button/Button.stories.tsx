@@ -10,5 +10,6 @@ storiesOf('Button', module).add('Default', () => (
     })}
     text={text('Text', 'Default button')}
     outlined={boolean('Outlined', false)}
+    disabled={boolean('Disabled', false)}
   />
 ));

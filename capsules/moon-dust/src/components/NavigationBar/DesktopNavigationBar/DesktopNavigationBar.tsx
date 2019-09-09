@@ -12,8 +12,8 @@ const StyledDesktopNavigationBar = styled.ul`
     p-0
     m-0
     list-none
+    bg-gray-100
   `}
-  background-color: #f7f9fa;
 `;
 
 const DesktopNavigationBar: React.FC = props => {

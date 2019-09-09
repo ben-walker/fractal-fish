@@ -44,7 +44,7 @@ const Overlay = styled.div`
     list-none
     shadow-2xl
     rounded
-    bg-white
+    bg-gray-100
   `}
   width: 95%;
   height: 60%;

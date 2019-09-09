@@ -3,11 +3,13 @@ import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 import { buttonVariant } from '../../theme/variant-map';
 
+// TODO: implement button loading
 export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
   text: string;
   variant?: 'default' | 'primary';
   outlined?: boolean;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 const StyledButton = styled.button`
@@ -39,6 +41,7 @@ const Button: React.FC<IButton> = props => {
 
 Button.defaultProps = {
   disabled: false,
+  loading: false,
   outlined: false,
   variant: 'default',
 };

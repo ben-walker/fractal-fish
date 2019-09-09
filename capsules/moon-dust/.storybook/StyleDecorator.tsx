@@ -5,11 +5,17 @@ import styled from 'styled-components/macro';
 import WindowDimensionsProvider from '../src/hooks/WindowDimensions/WindowDimensions';
 import GlobalStyle from '../src/theme/global-style';
 
+const StyleWrapper = styled.div`
+  margin: 0.75rem;
+`;
+
 const StyleDecorator = (storyFn: RenderFunction) => (
   <>
     <GlobalStyle />
     <ThemeProvider theme={{ mode: 'light' }}>
-      <WindowDimensionsProvider>{storyFn()}</WindowDimensionsProvider>
+      <WindowDimensionsProvider>
+        <StyleWrapper>{storyFn()}</StyleWrapper>
+      </WindowDimensionsProvider>
     </ThemeProvider>
   </>
 );

@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import { boolean, optionsKnob as options, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -12,5 +13,6 @@ storiesOf('Button', module).add('Default', () => (
     outlined={boolean('Outlined', false)}
     disabled={boolean('Disabled', false)}
     loading={boolean('Loading', false)}
+    onClick={action('button-click')}
   />
 ));

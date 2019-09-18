@@ -5,7 +5,7 @@ node_modules/
 build/
 generated/
 src/react-app-env.d.ts
-storybook-static/
+.static-storybook/
 
 # Logging
 logs/

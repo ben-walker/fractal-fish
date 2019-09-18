@@ -22,7 +22,6 @@ const StyledButton = styled.button`
     cursor-pointer
     border-2
     border-solid
-    shadow
   `}
   color: ${(props: IButton) => (props.outlined ? '#2d3748' : 'white')};
   background-color: ${(props: IButton) => (props.outlined ? 'transparent' : buttonVariant)};

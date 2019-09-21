@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckSquare, Square } from 'react-feather';
+import { CheckCircle, Circle } from 'react-feather';
 import styled from 'styled-components/macro';
 import tw from 'tailwind.macro';
 
@@ -19,7 +19,7 @@ const Checkbox: React.FC<ICheckbox> = props => {
 
   return (
     <StyledCheckbox onClick={() => setChecked(state => !state)}>
-      {checked ? <CheckSquare /> : <Square />}
+      {checked ? <CheckCircle /> : <Circle />}
     </StyledCheckbox>
   );
 };

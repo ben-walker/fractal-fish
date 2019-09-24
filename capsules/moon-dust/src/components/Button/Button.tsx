@@ -12,6 +12,7 @@ export interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
 
 const StyledButton = styled.button`
   ${tw`
+    flex
     px-5
     py-2
     rounded-sm

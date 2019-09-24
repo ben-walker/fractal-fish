@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   ${tw`
     px-5
     py-2
-    rounded
+    rounded-sm
     outline-none
     select-none
     font-medium
@@ -23,7 +23,7 @@ const StyledButton = styled.button`
     border-2
     border-solid
   `}
-  color: ${(props: IButton) => (props.outlined ? '#2d3748' : 'white')};
+  color: ${(props: IButton) => (props.outlined ? '#333333' : 'white')};
   background-color: ${(props: IButton) => (props.outlined ? 'transparent' : buttonVariant)};
   border-color: ${buttonVariant};
   :disabled {

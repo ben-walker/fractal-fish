@@ -5,21 +5,23 @@ import tw from 'tailwind.macro';
 const StyledTextInput = styled.input`
   ${tw`
     flex
+    bg-transparent
     px-4
     py-3
-    rounded
+    rounded-sm
     border-solid
-    border
-    border-gray-400
+    border-2
+    border-gray-500
     font-normal
     text-base
     focus:shadow-outline
   `}
-
-  color: #2d3748;
-
+  color: darkslategray;
   ::placeholder {
     color: gray;
+  }
+  :focus {
+    border-color: #0496ff;
   }
 `;
 

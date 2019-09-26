@@ -1,3 +1,4 @@
+// TODO: Refactor to avoid the hamburger menu
 import React, { useState } from 'react';
 import { Menu, X } from 'react-feather';
 import { animated, config, useSpring } from 'react-spring';

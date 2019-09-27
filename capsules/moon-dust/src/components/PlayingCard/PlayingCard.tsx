@@ -52,7 +52,7 @@ const PlayingCard: React.FC<IPlayingCard> = props => {
 };
 
 PlayingCard.defaultProps = {
-  isFlippedInitially: false,
+  isFlippedInitially: true,
 };
 
 export default PlayingCard;

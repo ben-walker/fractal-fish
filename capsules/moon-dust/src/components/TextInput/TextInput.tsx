@@ -29,9 +29,10 @@ const StyledTextInput = styled.input`
   }
 `;
 
+type InputTypes = 'text' | 'password' | 'email' | 'number';
+
 export interface ITextInput extends React.HTMLAttributes<HTMLInputElement> {
-  placeholder?: string;
-  type?: 'text' | 'password' | 'email' | 'number';
+  type?: InputTypes;
 }
 
 const TextInput: React.FC<ITextInput> = props => {

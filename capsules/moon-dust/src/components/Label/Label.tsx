@@ -4,7 +4,7 @@ import tw from 'tailwind.macro';
 
 export interface ILabel extends React.HTMLAttributes<HTMLLabelElement> {
   text: string;
-  size?: string;
+  size?: number;
   weight?: number;
 }
 
@@ -12,7 +12,7 @@ const StyledLabel = styled.label`
   ${tw`
     select-none
   `}
-  font-size: ${(props: ILabel) => props.size};
+  font-size: ${(props: ILabel) => `${props.size}rem`};
   font-weight: ${(props: ILabel) => props.weight};
 `;
 
@@ -21,7 +21,7 @@ const Label: React.FC<ILabel> = props => {
 };
 
 Label.defaultProps = {
-  size: '1.25rem',
+  size: 1.2,
   weight: 400,
 };
 

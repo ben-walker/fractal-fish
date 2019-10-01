@@ -14,6 +14,7 @@ const StyledTextInput = styled.input`
     border-gray-500
     font-normal
     text-base
+    hover:shadow-inner
     focus:shadow-outline
   `}
   color: darkslategray;
@@ -22,6 +23,9 @@ const StyledTextInput = styled.input`
   }
   :focus {
     border-color: #0496ff;
+    ::placeholder {
+      color: lightgray;
+    }
   }
 `;
 

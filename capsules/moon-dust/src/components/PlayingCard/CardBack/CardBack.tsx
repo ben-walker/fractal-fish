@@ -21,6 +21,7 @@ const StyledCardBack = styled.div`
 const CardBack: React.FC<ICardBack> = props => {
   const Display = props.display;
 
+  // TODO: Investigate why card back doesn't show up in Safari
   return (
     <StyledCardBack {...props}>
       <Display />

@@ -1,0 +1,27 @@
+{
+  "name": "potential-well",
+  "version": "0.0.0",
+  "description": "Koa Websocket Server",
+  "private": true,
+  "author": {
+    "name": "Ben Walker",
+    "email": "bwalke05@gmail.com",
+    "url": "https://github.com/ben-walker"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ben-walker/fractal-fish.git",
+    "directory": "capsules/potential-well"
+  },
+  "main": "",
+  "scripts": {},
+  "dependencies": {
+    "koa": "^2.11.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.52",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.2"
+  }
+}

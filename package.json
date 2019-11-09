@@ -1,7 +1,7 @@
 {
   "name": "fractal-fish",
   "version": "0.0.0",
-  "description": "Online poker",
+  "description": "Under construction.",
   "private": true,
   "author": {
     "name": "Ben Walker",
@@ -22,7 +22,7 @@
   ],
   "devDependencies": {
     "husky": "^3.0.9",
-    "lerna": "^3.18.1"
+    "lerna": "^3.18.4"
   },
   "husky": {
     "hooks": {

@@ -1,5 +1,5 @@
 import * as webpack from 'webpack';
-import * as webpackMerge from 'webpack-merge'
+import * as webpackMerge from 'webpack-merge';
 import webpackBase from './webpack.base';
 
 const config: webpack.Configuration = webpackMerge(webpackBase, {

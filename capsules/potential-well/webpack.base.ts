@@ -27,7 +27,7 @@ const config: webpack.Configuration = {
   plugins: [
     new CleanWebpackPlugin(),
     new forkTsCheckerWebpackPlugin({
-      eslint: true
+      eslint: true,
     }),
   ],
   resolve: {

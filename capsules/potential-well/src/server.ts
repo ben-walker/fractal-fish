@@ -1,5 +1,5 @@
 import * as Koa from 'koa';
-import helmet from 'koa-helmet';
+import * as helmet from 'koa-helmet';
 
 const app = new Koa();
 

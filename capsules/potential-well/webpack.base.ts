@@ -26,7 +26,9 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new forkTsCheckerWebpackPlugin(), // TODO: Use ESLint option when config is defined
+    new forkTsCheckerWebpackPlugin({
+      eslint: true
+    }),
   ],
   resolve: {
     extensions: ['.ts'],

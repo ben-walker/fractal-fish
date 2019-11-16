@@ -1,4 +1,4 @@
-# potential-well
+# Potential Well
 
 ## Overview
 

@@ -1,4 +1,4 @@
-# outer-space
+# Outer Space
 
 ## Overview
 

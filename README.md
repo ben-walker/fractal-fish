@@ -1,4 +1,4 @@
-# fractal-fish
+# Fractal Fish
 
 ## Overview
 

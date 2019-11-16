@@ -4,4 +4,3 @@ import * as helmet from 'koa-helmet';
 const app = new Koa();
 
 app.use(helmet());
-const test = '';

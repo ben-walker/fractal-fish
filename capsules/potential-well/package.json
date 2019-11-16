@@ -20,7 +20,10 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.ts": ["eslint --fix", "git add"]
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "koa": "^2.11.0",
@@ -40,6 +43,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "fork-ts-checker-webpack-plugin": "^3.1.0",
     "lint-staged": "^9.4.3",
+    "nodemon-webpack-plugin": "^4.2.0",
     "prettier": "^1.19.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.5.2",

@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
-    "strictNullChecks": true,
+    "strict": true,
     "typeRoots": [
       "./node_modules/@types",
       "./src/typings"

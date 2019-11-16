@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "strict": true,
     "paths": {
       "*": ["src/typings/*"]
-    }
+    },
+    "sourceMap": true,
+    "strict": true
   }
 }

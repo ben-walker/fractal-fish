@@ -1,13 +1,6 @@
-import * as Koa from 'koa';
-import * as helmet from 'koa-helmet';
 import * as http from 'http';
-import * as logger from 'koa-logger';
 import * as Websocket from 'ws';
-
-const app = new Koa();
-
-app.use(logger());
-app.use(helmet());
+import app from './app';
 
 const server = http.createServer(app.callback());
 const port = '3000' || process.env.PORT;

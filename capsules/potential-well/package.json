@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "koa": "^2.11.0",
+    "koa-compose": "^4.1.0",
     "koa-helmet": "^5.2.0",
     "koa-logger": "^3.2.1",
     "ws": "^7.2.0"

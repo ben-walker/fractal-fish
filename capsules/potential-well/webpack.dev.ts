@@ -1,3 +1,4 @@
+import * as DotenvWebpack from 'dotenv-webpack';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import * as webpackMerge from 'webpack-merge';
@@ -8,6 +9,7 @@ const config: webpack.Configuration = webpackMerge(webpackBase, {
   devtool: 'inline-source-map',
   mode: 'development',
   plugins: [
+    new DotenvWebpack({ path: './.env.local' }),
     new NodemonWebpackPlugin({
       env: {
         quiet: true,

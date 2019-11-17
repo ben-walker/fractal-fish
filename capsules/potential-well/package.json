@@ -30,12 +30,14 @@
     "koa-compose": "^4.1.0",
     "koa-helmet": "^5.2.0",
     "koa-logger": "^3.2.1",
+    "mongoose": "^5.7.11",
     "ws": "^7.2.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.52",
     "@types/koa-helmet": "^3.1.2",
     "@types/koa-logger": "^3.1.1",
+    "@types/mongoose": "^5.5.32",
     "@types/webpack": "^4.41.0",
     "@types/webpack-merge": "^4.1.5",
     "@types/webpack-node-externals": "^1.6.3",

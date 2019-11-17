@@ -28,7 +28,8 @@
   "dependencies": {
     "koa": "^2.11.0",
     "koa-helmet": "^5.2.0",
-    "koa-logger": "^3.2.1"
+    "koa-logger": "^3.2.1",
+    "ws": "^7.2.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.52",
@@ -37,6 +38,7 @@
     "@types/webpack": "^4.41.0",
     "@types/webpack-merge": "^4.1.5",
     "@types/webpack-node-externals": "^1.6.3",
+    "@types/ws": "^6.0.3",
     "@typescript-eslint/eslint-plugin": "^2.7.0",
     "@typescript-eslint/parser": "^2.7.0",
     "clean-webpack-plugin": "^3.0.0",

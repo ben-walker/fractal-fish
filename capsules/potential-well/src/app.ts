@@ -5,7 +5,7 @@ import * as logger from 'koa-logger';
 import errorCatcher from './middleware/error-catcher';
 
 const app = new Koa();
-const middleware = compose([helmet(), logger(), errorCatcher]);
+const middleware = compose([errorCatcher, helmet(), logger()]);
 
 app.use(middleware);
 

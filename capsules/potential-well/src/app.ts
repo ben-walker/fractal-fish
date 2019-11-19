@@ -1,12 +1,7 @@
-import * as compose from 'koa-compose';
 import * as Koa from 'koa';
-import * as helmet from 'koa-helmet';
-import * as logger from 'koa-logger';
-import errorCatcher from './middleware/error-catcher';
+import bundle from './middleware/composed';
 
 const app = new Koa();
-const middleware = compose([errorCatcher, helmet(), logger()]);
-
-app.use(middleware);
+app.use(bundle);
 
 export default app;

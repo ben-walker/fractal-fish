@@ -1,16 +1,16 @@
-import * as DotenvWebpack from 'dotenv-webpack';
-import * as path from 'path';
-import * as webpack from 'webpack';
-import * as webpackMerge from 'webpack-merge';
-import * as NodemonWebpackPlugin from 'nodemon-webpack-plugin';
-import webpackBase from './webpack.base';
+import { Configuration } from 'webpack';
+import Dotenv from 'dotenv-webpack';
+import Nodemon from 'nodemon-webpack-plugin';
+import base from './webpack.base';
+import merge from 'webpack-merge';
+import path from 'path';
 
-const config: webpack.Configuration = webpackMerge(webpackBase, {
+const config: Configuration = merge(base, {
   devtool: 'inline-source-map',
   mode: 'development',
   plugins: [
-    new DotenvWebpack({ path: './.env.local' }),
-    new NodemonWebpackPlugin({
+    new Dotenv({ path: './.env.local' }),
+    new Nodemon({
       env: {
         quiet: true,
         script: path.resolve(__dirname, 'build/app.bundle.js'),

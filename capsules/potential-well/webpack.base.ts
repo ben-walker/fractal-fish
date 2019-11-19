@@ -1,12 +1,12 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import * as forkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import * as path from 'path';
-import * as webpack from 'webpack';
-import * as webpackNodeExternals from 'webpack-node-externals';
+import { CleanWebpackPlugin as BuildCleaner } from 'clean-webpack-plugin';
+import { Configuration } from 'webpack';
+import ForkTsChecker from 'fork-ts-checker-webpack-plugin';
+import path from 'path';
+import nodeExternals from 'webpack-node-externals';
 
-const config: webpack.Configuration = {
+const config: Configuration = {
   entry: path.resolve(__dirname, 'src/server.ts'),
-  externals: [webpackNodeExternals()],
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
@@ -25,8 +25,8 @@ const config: webpack.Configuration = {
     path: path.resolve(__dirname, 'build'),
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new forkTsCheckerWebpackPlugin({
+    new BuildCleaner(),
+    new ForkTsChecker({
       eslint: true,
     }),
   ],

@@ -1,4 +1,4 @@
-import * as mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const options: mongoose.ConnectionOptions = {
   useNewUrlParser: true,

@@ -1,5 +1,5 @@
-import * as http from 'http';
-import * as Websocket from 'ws';
+import http from 'http';
+import Websocket from 'ws';
 import app from './app';
 
 const server = http.createServer(app.callback());

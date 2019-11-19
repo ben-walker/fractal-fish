@@ -1,6 +1,6 @@
-import * as compose from 'koa-compose';
-import * as helmet from 'koa-helmet';
-import * as logger from 'koa-logger';
+import compose from 'koa-compose';
+import helmet from 'koa-helmet';
 import backstop from './lts/error-catcher';
+import steno from './lts/logger';
 
-export default compose([backstop, helmet(), logger()]);
+export default compose([backstop, helmet(), steno]);

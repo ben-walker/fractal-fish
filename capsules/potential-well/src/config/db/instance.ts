@@ -14,18 +14,20 @@ class DBInstance {
     this.connection = mongoose.connection;
   }
 
-  public connect(): void {
-    mongoose.connect(this.uri, options).catch(err => {
-      console.error(err.stack);
-      process.exit(1);
-    });
+  public async connect(): Promise<void> {
+    try {
+      await mongoose.connect(this.uri, options);
+    } catch (e) {
+      throw new Error(e);
+    }
   }
 
-  public disconnect(): void {
-    this.connection.close().catch(err => {
-      console.error(err.stack);
-      process.exit(1);
-    });
+  public async disconnect(): Promise<void> {
+    try {
+      await this.connection.close();
+    } catch (e) {
+      throw new Error(e);
+    }
   }
 
   public getConnection(): mongoose.Connection {

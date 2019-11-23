@@ -43,7 +43,7 @@
     "@types/styled-components": "^4.1.19",
     "@types/styled-theming": "^2.2.2",
     "babel-plugin-styled-components": "^1.10.6",
-    "lint-staged": "^9.4.2",
+    "lint-staged": "^9.4.3",
     "prettier": "^1.18.2",
     "tailwind.macro": "^1.0.0-alpha.10",
     "ts-loader": "^6.2.0",

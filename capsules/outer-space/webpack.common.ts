@@ -2,7 +2,6 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import * as forkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
-import * as webpackBuildNotifier from 'webpack-build-notifier';
 import * as webpackNodeExternals from 'webpack-node-externals';
 
 const config: webpack.Configuration = {
@@ -30,7 +29,6 @@ const config: webpack.Configuration = {
     new forkTsCheckerWebpackPlugin({
       tslint: true,
     }),
-    new webpackBuildNotifier(),
   ],
   resolve: {
     extensions: ['.ts', '.js'],

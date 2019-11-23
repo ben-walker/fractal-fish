@@ -14,19 +14,12 @@
     "url": "https://github.com/ben-walker/fractal-fish.git"
   },
   "main": "",
-  "scripts": {
-    "start": "lerna run --parallel start"
-  },
-  "workspaces": [
-    "capsules/*"
-  ],
   "devDependencies": {
-    "husky": "^3.1.0",
-    "lerna": "^3.19.0"
+    "husky": "^3.1.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna run --concurrency 1 --stream precommit"
+      "pre-commit": ""
     }
   }
 }

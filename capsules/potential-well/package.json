@@ -14,7 +14,6 @@
     "url": "https://github.com/ben-walker/fractal-fish.git",
     "directory": "capsules/potential-well"
   },
-  "main": "",
   "scripts": {
     "start": "webpack --progress --config webpack.dev.ts",
     "precommit": "lint-staged"

@@ -10,8 +10,8 @@ Online poker.
 
 | Problem Area    | Solution                                          |
 | --------------- | ------------------------------------------------- |
-| Repo manager    | **[lerna](https://github.com/lerna/lerna)**       |
-| Package manager | **[npm](https://github.com/npm/cli)**             |
+| Repo manager    | **[bolt](https://github.com/boltpkg/bolt)**       |
+| Package manager | **[yarn](https://github.com/yarnpkg/yarn)**             |
 | Bundling        | **[webpack](https://github.com/webpack/webpack)** |
 
 ## Subdirectories

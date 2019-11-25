@@ -14,7 +14,6 @@
     "url": "https://github.com/ben-walker/fractal-fish.git",
     "directory": "capsules/moon-dust"
   },
-  "main": "",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -35,7 +34,7 @@
     "@storybook/theming": "^5.2.6",
     "@types/jest": "^24.0.23",
     "@types/node": "12.12.12",
-    "@types/react": "16.9.12",
+    "@types/react": "16.9.13",
     "@types/react-dom": "16.9.4",
     "@types/react-router-dom": "^5.1.2",
     "@types/socket.io-client": "^1.4.32",

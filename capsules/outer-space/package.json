@@ -14,7 +14,6 @@
     "url": "https://github.com/ben-walker/fractal-fish.git",
     "directory": "capsules/outer-space"
   },
-  "main": "",
   "scripts": {
     "start": "webpack --progress --config webpack.dev.ts",
     "build": "webpack --progress --config webpack.prod.ts",
@@ -53,6 +52,7 @@
     "winston-daily-rotate-file": "^4.3.0"
   },
   "dependencies": {
+    "@prisma/photon": "^2.0.0-alpha.351",
     "apollo-server-express": "^2.9.12",
     "app-root-path": "^3.0.0",
     "cors": "^2.8.5",
@@ -64,6 +64,7 @@
     "nexus": "^0.11.7",
     "nexus-prisma": "^0.6.1",
     "prisma-client-lib": "^1.34.10",
+    "prisma2": "^2.0.0-preview016.2",
     "socket.io": "^2.3.0",
     "winston": "^3.2.1"
   }

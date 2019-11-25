@@ -14,7 +14,6 @@
     "url": "https://github.com/ben-walker/fractal-fish.git",
     "directory": "capsules/moon-dust"
   },
-  "main": "",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

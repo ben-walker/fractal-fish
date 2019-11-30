@@ -5,7 +5,7 @@ import app from './app';
 
 const server = http.createServer(app.callback());
 const io = SocketIO(server);
-io.adapter(redisAdapter());
+io.adapter(redisAdapter()); // TODO: Use ioredis as dedicated pub/sub clients
 
 io.on('connection', socket => {
   socket.send('hello world');

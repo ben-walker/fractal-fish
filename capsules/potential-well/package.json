@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "webpack --progress --config webpack.dev.ts",
+    "build": "webpack --progress --config webpack.prod.ts",
     "precommit": "lint-staged"
   },
   "lint-staged": {

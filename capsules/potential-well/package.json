@@ -15,8 +15,8 @@
     "directory": "capsules/potential-well"
   },
   "scripts": {
-    "start": "webpack --progress --config webpack.dev.ts",
-    "build": "webpack --config webpack.prod.ts",
+    "start": "webpack --config webpack/webpack.dev.ts",
+    "build": "webpack --config webpack/webpack.prod.ts",
     "precommit": "lint-staged"
   },
   "lint-staged": {

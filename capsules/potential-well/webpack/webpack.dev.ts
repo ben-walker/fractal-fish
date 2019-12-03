@@ -13,8 +13,8 @@ const config: Configuration = merge(base, {
     new Nodemon({
       env: {
         quiet: true,
-        script: path.resolve(__dirname, 'build/app.bundle.js'),
-        watch: [path.resolve(__dirname, 'build/app.bundle.js')],
+        script: path.resolve('build/app.bundle.js'),
+        watch: [path.resolve('build/app.bundle.js')],
       },
     }),
   ],

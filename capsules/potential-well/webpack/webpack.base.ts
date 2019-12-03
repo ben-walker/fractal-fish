@@ -5,12 +5,13 @@ import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 
 const config: Configuration = {
-  entry: path.resolve(__dirname, 'src/server.ts'),
+  context: path.resolve('./'),
+  entry: path.resolve('src/server.ts'),
   externals: [nodeExternals()],
   module: {
     rules: [
       {
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve('src'),
         loader: 'ts-loader',
         options: {
           experimentalWatchApi: true,
@@ -22,7 +23,7 @@ const config: Configuration = {
   },
   output: {
     filename: 'app.bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve('build'),
   },
   plugins: [
     new BuildCleaner(),

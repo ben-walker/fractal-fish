@@ -1,17 +1,27 @@
 version: "3"
 services:
-  app:
+  server:
     build: .
     depends_on:
       - redis
     ports:
-      - "5000"
+      - 5000
     volumes:
       - ./src:/app/src
+    labels:
+      - traefik.http.routers.server.rule=Host(`server.docker.localhost`)
 
   redis:
-    image: "redis:latest"
+    image: redis:latest
     ports:
-      - "6379:6379"
+      - 6379:6379
     sysctls:
-      net.core.somaxconn: "511"
+      net.core.somaxconn: 511
+
+  reverse-proxy:
+    image: traefik:v2.0
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.yml:/etc/traefik/traefik.yml

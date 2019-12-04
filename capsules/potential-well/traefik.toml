@@ -1,5 +1,1 @@
 [providers.docker]
-
-[http.services]
-  [http.services.server]
-    [http.services.server.loadBalancer.sticky.cookie]

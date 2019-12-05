@@ -25,6 +25,10 @@
       "git add"
     ]
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0",

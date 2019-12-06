@@ -9,7 +9,7 @@ const config: Configuration = merge(base, {
   devtool: 'inline-source-map',
   mode: 'development',
   plugins: [
-    new Dotenv({ path: './.env.local' }),
+    new Dotenv({ path: path.resolve('.env.local') }),
     new Nodemon({
       env: {
         quiet: true,

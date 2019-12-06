@@ -2,7 +2,7 @@ import redisAdapter from 'socket.io-redis';
 import Redis from 'ioredis';
 
 const clientOpts: Redis.RedisOptions = {
-  host: 'redis',
+  host: process.env.REDIS_HOST,
 };
 
 const adapter = redisAdapter({

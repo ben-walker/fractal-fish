@@ -54,7 +54,6 @@
     "eslint-plugin-prettier": "^3.1.1",
     "fork-ts-checker-webpack-plugin": "^3.1.1",
     "lint-staged": "^9.5.0",
-    "nodemon-webpack-plugin": "^4.2.1",
     "pino-pretty": "^3.5.0",
     "prettier": "^1.19.1",
     "ts-loader": "^6.2.1",

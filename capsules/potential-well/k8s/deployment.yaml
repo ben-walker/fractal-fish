@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: potential-well
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: potential-well
+  template:
+    metadata:
+      labels:
+        app: potential-well
+    spec:
+      containers:
+      - name: quark
+        image: fractalfish/quark:latest
+        ports:
+        - containerPort: 3000

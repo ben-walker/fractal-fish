@@ -8,23 +8,10 @@ services:
       - 5000
     volumes:
       - ./src:/app/src
-    labels:
-      - traefik.http.routers.server.rule=Host(`server.docker.localhost`)
 
   redis:
     image: redis:latest
     ports:
       - 6379:6379
-    labels:
-      - traefik.enable=false
     sysctls:
       net.core.somaxconn: 511
-
-  reverse-proxy:
-    image: traefik:v2.0
-    ports:
-      - 80:80
-      - 8080:8080
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik.toml:/etc/traefik/traefik.toml

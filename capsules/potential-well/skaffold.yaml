@@ -1,0 +1,11 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: potential-well-deployment
+build:
+  artifacts:
+  - image: fractalfish/quark
+deploy:
+  kubectl:
+    manifests:
+    - k8s/deployment.yaml

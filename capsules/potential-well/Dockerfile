@@ -12,6 +12,8 @@ RUN yarn install
 
 COPY --chown=node:node . .
 
+RUN yarn build:dev
+
 EXPOSE 3000
 
-CMD yarn run start
+CMD node ./build/app.bundle.js

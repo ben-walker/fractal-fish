@@ -4,8 +4,10 @@ metadata:
   name: potential-well-deployment
 build:
   artifacts:
-    - image: fractalfish/quark
+  - image: quark
+  local:
+    push: false
 deploy:
   kubectl:
     manifests:
-      - k8s/deployment.yaml
+    - k8s/*.yaml

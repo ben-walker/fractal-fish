@@ -3,6 +3,7 @@ import Redis from 'ioredis';
 
 const clientOpts: Redis.RedisOptions = {
   host: process.env.REDIS_HOST,
+  port: Number(process.env.REDIS_PORT),
 };
 
 const adapter = redisAdapter({

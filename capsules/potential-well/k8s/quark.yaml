@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quark
+  labels:
+    app: quark
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quark
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: quark
+        tier: backend
+    spec:
+      containers:
+      - name: quark
+        image: quark
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quark
+  labels:
+    app: quark
+    tier: backend
+spec:
+  ports:
+  - port: 3000
+  selector:
+    app: quark
+    tier: backend

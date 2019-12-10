@@ -16,6 +16,7 @@ Online poker.
 
 ## Subdirectories
 
-- [outer-space](./capsules/outer-space/) (Express/GraphQL backend)
-- [moon-dust](./capsules/moon-dust/) (React frontend)
-- [potential-well](./capsules/potential-well) (Koa/Websocket server)
+- [potential-well](./capsules/potential-well) (Koa server)
+- [strange-charm](./capsules/strange-charm) (Vue SSR frontend)
+- [outer-space](./capsules/outer-space/) (Express/GraphQL backend) - **Deprecated**
+- [moon-dust](./capsules/moon-dust/) (React frontend) - **Deprecated**

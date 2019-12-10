@@ -2,12 +2,14 @@ apiVersion: skaffold/v1
 kind: Config
 metadata:
   name: potential-well-deployment
-build:
-  artifacts:
-  - image: quark
-  local:
-    push: false
-deploy:
-  kubectl:
-    manifests:
-    - k8s/*.yaml
+profiles:
+- name: local
+  build:
+    artifacts:
+    - image: quark
+    local:
+      push: false
+  deploy:
+    kubectl:
+      manifests:
+      - k8s/*.yaml

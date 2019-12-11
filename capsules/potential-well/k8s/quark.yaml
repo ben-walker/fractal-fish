@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: quark
-        image: quark
+        image: fractalfish/quark
         env:
         - name: GET_HOSTS_FROM
           value: dns

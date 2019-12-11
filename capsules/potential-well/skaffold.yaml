@@ -6,7 +6,7 @@ profiles:
 - name: local
   build:
     artifacts:
-    - image: quark
+    - image: fractalfish/quark
     local:
       push: false
   deploy:

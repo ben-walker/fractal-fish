@@ -33,3 +33,8 @@ workflows:
 
   potential-well:
     when: << pipeline.parameters.potential-well >>
+    jobs:
+      - build:
+        executor: node
+        steps:
+          - checkout

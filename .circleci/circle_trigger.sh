@@ -13,6 +13,8 @@ CIRCLE_API="https://circleci.com/api"
 LAST_COMPLETED_BUILD_URL="${CIRCLE_API}/v1.1/project/${REPOSITORY_TYPE}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/tree/${CIRCLE_BRANCH}?filter=completed&limit=100&shallow=true"
 LAST_COMPLETED_BUILD_SHA=`curl -Ss -u "${CIRCLE_TOKEN}:" "${LAST_COMPLETED_BUILD_URL}" | jq -r 'map(select(.status == "success") | select(.workflows.workflow_name != "ci")) | .[0]["vcs_revision"]'`
 
+echo -e "${LAST_COMPLETED_BUILD_URL}"
+
 if  [[ ${LAST_COMPLETED_BUILD_SHA} == "null" ]]; then
   echo -e "There are no completed CI builds in branch ${CIRCLE_BRANCH}."
 

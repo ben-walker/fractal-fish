@@ -1,1 +1,23 @@
-version: 2
+version: 2.1
+
+parameters:
+  trigger:
+    type: boolean
+    default: true
+
+jobs:
+  trigger-workflows:
+    docker:
+      - image: node:13
+    steps:
+      - checkout
+      - run:
+        name: Trigger Workflows
+        command: chmod +x ./circle_trigger.sh && ./circle_trigger.sh
+
+workflows:
+  version: 2
+  ci:
+    when: << pipeline.parameters.trigger >>
+    jobs:
+      - trigger-workflows

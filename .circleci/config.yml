@@ -1,11 +1,10 @@
 version: 2.1
 
 parameters:
-  # Main workflow: determine what packages to build
   trigger:
     type: boolean
     default: true
-  # Separate workflow parameter per package
+  # Project parameters
   potential-well:
     type: boolean
     default: false

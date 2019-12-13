@@ -2,6 +2,7 @@ apiVersion: skaffold/v1
 kind: Config
 metadata:
   name: potential-well-deployment
+
 profiles:
 - name: local
   build:

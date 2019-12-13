@@ -24,6 +24,16 @@ jobs:
           name: Trigger Workflows
           command: chmod +x .circleci/circle_trigger.sh && .circleci/circle_trigger.sh
 
+  build:
+    executor: node
+    parameters:
+      package_name:
+        type: string
+    working_directory: ~/project/packages/<< parameters.package_name >>
+    steps:
+      - checkout
+      - setup_remote_docker
+
 workflows:
   version: 2
   ci:
@@ -34,7 +44,5 @@ workflows:
   potential-well:
     when: << pipeline.parameters.potential-well >>
     jobs:
-      - build:
-        executor: node
-        steps:
-          - checkout
+      - build
+          package_name: potential-well

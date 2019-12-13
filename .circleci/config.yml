@@ -12,8 +12,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Trigger Workflows
-        command: chmod +x ./circle_trigger.sh && ./circle_trigger.sh
+          name: Trigger Workflows
+          command: chmod +x ./circle_trigger.sh && ./circle_trigger.sh
 
 workflows:
   version: 2

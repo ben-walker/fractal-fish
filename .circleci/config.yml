@@ -1,0 +1,48 @@
+version: 2.1
+
+parameters:
+  trigger:
+    type: boolean
+    default: true
+  # Project parameters
+  potential-well:
+    type: boolean
+    default: false
+
+executors:
+  node:
+    docker:
+      - image: circleci/node
+
+jobs:
+  trigger-workflows:
+    executor: node
+    steps:
+      - checkout
+      - run:
+          name: Trigger Workflows
+          command: chmod +x .circleci/circle_trigger.sh && .circleci/circle_trigger.sh
+
+  build:
+    executor: node
+    parameters:
+      package_name:
+        type: string
+    working_directory: ~/project/packages/<< parameters.package_name >>
+    steps:
+      - checkout
+      - setup_remote_docker
+
+workflows:
+  version: 2
+  ci:
+    when: << pipeline.parameters.trigger >>
+    jobs:
+      - trigger-workflows
+
+  potential-well:
+    when: << pipeline.parameters.potential-well >>
+    jobs:
+      - build:
+          name: potential-well-build
+          package_name: potential-well

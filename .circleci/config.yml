@@ -35,7 +35,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: testing
-          command: echo "We're in << parameter.package_name >>"
+          command: echo "We're in << parameters.package_name >>"
 
 workflows:
   version: 2

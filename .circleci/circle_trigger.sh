@@ -94,7 +94,7 @@ if [ "$HTTP_RESPONSE" -ge "200" ] && [ "$HTTP_RESPONSE" -lt "300" ]; then
   echo "Response:"
   cat response.txt
 else
-  echo -e "\e[93mReceived status code: ${HTTP_RESPONSE}\e[0m"
+  echo -e "Received status code: ${HTTP_RESPONSE}"
   echo "Response:"
   cat response.txt
   exit 1

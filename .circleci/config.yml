@@ -8,7 +8,7 @@ parameters:
 executors:
   node:
     docker:
-      - image: node:13
+      - image: circleci/node
 
 jobs:
   trigger-workflows:

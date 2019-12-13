@@ -32,9 +32,6 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: testing
-          command: echo "We're in << parameters.package_name >>"
 
 workflows:
   version: 2

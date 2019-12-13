@@ -5,10 +5,14 @@ parameters:
     type: boolean
     default: true
 
-jobs:
-  trigger-workflows:
+executors:
+  node:
     docker:
       - image: node:13
+
+jobs:
+  trigger-workflows:
+    executor: node
     steps:
       - checkout
       - run:

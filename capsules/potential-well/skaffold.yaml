@@ -7,9 +7,21 @@ profiles:
   build:
     artifacts:
     - image: fractalfish/quark
+      docker:
+        dockerfile: Dockerfile
     local:
       push: false
   deploy:
     kubectl:
       manifests:
       - k8s/*.yaml
+
+- name: remote
+  build:
+    artifacts:
+    - image: fractalfish/quark
+      docker:
+        dockerfile: Dockerfile
+    local:
+      push: true
+  deploy: {}

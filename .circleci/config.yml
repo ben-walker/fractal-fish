@@ -45,4 +45,5 @@ workflows:
     when: << pipeline.parameters.potential-well >>
     jobs:
       - build:
+          name: potential-well-build
           package_name: potential-well

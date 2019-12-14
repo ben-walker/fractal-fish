@@ -1,7 +1,7 @@
 set -e
-set -o nounset
-set -o errexit
-set -o pipefail
+# set -o nounset
+# set -o errexit
+# set -o pipefail
 
 ROOT="./capsules" 
 REPOSITORY_TYPE="github"

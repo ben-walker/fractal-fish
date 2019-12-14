@@ -11,7 +11,8 @@ A web thing.
 | Problem Area    | Solution                                          |
 | --------------- | ------------------------------------------------- |
 | Repo manager    | **[bolt](https://github.com/boltpkg/bolt)**       |
-| Package manager | **[yarn](https://github.com/yarnpkg/yarn)**             |
+| Package manager | **[yarn](https://github.com/yarnpkg/yarn)**       |
+| Continuous Integration | **[CircleCI](https://circleci.com/docs)**  |
 
 ## Monorepo Layout
 

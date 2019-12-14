@@ -1,7 +1,7 @@
 {
   "name": "fractal-fish",
   "version": "0.0.0",
-  "description": "Under construction.",
+  "description": "Nothing but fish.",
   "private": true,
   "author": {
     "name": "Ben Walker",
@@ -10,10 +10,7 @@
   },
   "license": "ISC",
   "bolt": {
-    "workspaces": [
-      "capsules/potential-well",
-      "capsules/strange-charm"
-    ]
+    "workspaces": ["capsules/*"]
   },
   "husky": {
     "hooks": {

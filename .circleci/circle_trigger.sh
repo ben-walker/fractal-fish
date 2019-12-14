@@ -58,12 +58,11 @@ COUNT=0
 for PACKAGE in ${PACKAGES[@]}
 do
   PACKAGE_PATH=${ROOT}/$PACKAGE
-  LATEST_COMMIT_SINCE_LAST_BUILD=$(git log -1 $CIRCLE_SHA1 --format=format:%H --full-diff ${PACKAGE_PATH#/})
-
-  echo "${PACKAGE_PATH#/}"
-  echo "${CIRCLE_SHA1}"
-  echo "${LAST_COMPLETED_BUILD_SHA}"
-  echo "${LATEST_COMMIT_SINCE_LAST_BUILD}"
+  if [[ ${LAST_COMPLETED_BUILD_SHA} == "master" ]]; then
+    LATEST_COMMIT_SINCE_LAST_BUILD=$(git log -1 $CIRCLE_SHA1 --format=format:%H --full-diff ${PACKAGE_PATH#/})
+  else
+    LATEST_COMMIT_SINCE_LAST_BUILD=$(git log -1 $CIRCLE_SHA1 ^$LAST_COMPLETED_BUILD_SHA --format=format:%H --full-diff ${PACKAGE_PATH#/})
+  fi
 
   if [[ -z "$LATEST_COMMIT_SINCE_LAST_BUILD" ]]; then
     echo "  [-] $PACKAGE"

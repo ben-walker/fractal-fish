@@ -23,6 +23,7 @@ if  [[ ${LAST_COMPLETED_BUILD_SHA} == "null" ]]; then
     | sed 's/[\^~].*//' \
     | uniq)
 
+  echo -e "checking branch ${TREE}"
   REMOTE_BRANCHES=$(git branch -r | sed 's/\s*origin\///' | tr '\n' ' ')
   PARENT_BRANCH=master
   for BRANCH in ${TREE[@]}

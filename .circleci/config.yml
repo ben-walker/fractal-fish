@@ -8,6 +8,9 @@ parameters:
   potential-well:
     type: boolean
     default: false
+  strange-charm:
+    type: boolean
+    default: false
 
 executors:
   node:
@@ -46,3 +49,10 @@ workflows:
       - build:
           name: potential-well-build
           package_name: potential-well
+
+  strange-charm:
+    when: << pipeline.parameters.strange-charm >>
+    jobs:
+      - build:
+          name: strange-charm-build
+          package_name: strange-charm

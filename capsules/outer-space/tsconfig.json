@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "lib": ["esnext", "esnext.asynciterable", "dom"]
+  }
+}

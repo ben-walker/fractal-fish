@@ -16,12 +16,14 @@ LAST_COMPLETED_BUILD_SHA=`curl -Ss -u "${CIRCLE_TOKEN}:" "${LAST_COMPLETED_BUILD
 if  [[ ${LAST_COMPLETED_BUILD_SHA} == "null" ]]; then
   echo -e "There are no completed CI builds in branch ${CIRCLE_BRANCH}."
 
+  echo -e "getting tree"
   TREE=$(git show-branch -a \
     | grep '\*' \
     | grep -v `git rev-parse --abbrev-ref HEAD` \
     | sed 's/.*\[\(.*\)\].*/\1/' \
     | sed 's/[\^~].*//' \
     | uniq)
+  echo -e "got tree"
 
   REMOTE_BRANCHES=$(git branch -r | sed 's/\s*origin\///' | tr '\n' ' ')
   PARENT_BRANCH=master

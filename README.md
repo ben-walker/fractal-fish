@@ -2,9 +2,9 @@
 
 ## Overview
 
-Online poker.
+A web thing.
 
-## The Stack
+## Technology
 
 > **Bold** items are final (maybe, probably).
 
@@ -12,11 +12,15 @@ Online poker.
 | --------------- | ------------------------------------------------- |
 | Repo manager    | **[bolt](https://github.com/boltpkg/bolt)**       |
 | Package manager | **[yarn](https://github.com/yarnpkg/yarn)**             |
-| Bundling        | **[webpack](https://github.com/webpack/webpack)** |
 
-## Subdirectories
+## Monorepo Layout
+
+### In-Development Packages
 
 - [potential-well](./capsules/potential-well) (Koa server)
 - [strange-charm](./capsules/strange-charm) (Vue SSR frontend)
-- [outer-space](./capsules/outer-space/) (Express/GraphQL backend) - **Deprecated**
-- [moon-dust](./capsules/moon-dust/) (React frontend) - **Deprecated**
+
+### Archived Packages
+
+- [outer-space](./archived-capsules/outer-space/) (Express/GraphQL backend) - **Deprecated**
+- [moon-dust](./archived-capsules/moon-dust/) (React frontend) - **Deprecated**

@@ -10,7 +10,9 @@
   },
   "license": "ISC",
   "bolt": {
-    "workspaces": ["capsules/*"]
+    "workspaces": [
+      "capsules/*"
+    ]
   },
   "husky": {
     "hooks": {
@@ -19,7 +21,7 @@
   },
   "devDependencies": {
     "@types/dotenv-webpack": "^1.7.0",
-    "@types/ioredis": "^4.14.2",
+    "@types/ioredis": "^4.14.3",
     "@types/koa": "^2.11.0",
     "@types/koa-helmet": "^3.1.2",
     "@types/koa-pino-logger": "^2.1.6",
@@ -28,8 +30,8 @@
     "@types/webpack": "^4.41.0",
     "@types/webpack-merge": "^4.1.5",
     "@types/webpack-node-externals": "^1.7.0",
-    "@typescript-eslint/eslint-plugin": "^2.11.0",
-    "@typescript-eslint/parser": "^2.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
     "@vue/cli-plugin-eslint": "^4.1.1",
     "@vue/cli-plugin-router": "^4.1.1",
     "@vue/cli-plugin-typescript": "^4.1.1",
@@ -41,7 +43,7 @@
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-vue": "^6.0.1",
     "fork-ts-checker-webpack-plugin": "^3.1.1",
     "husky": "^3.1.0",
@@ -52,7 +54,7 @@
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10",
     "webpack-merge": "^4.2.2",
     "webpack-node-externals": "^1.7.2"

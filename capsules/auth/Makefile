@@ -1,6 +1,4 @@
-
 GOPATH:=$(shell go env GOPATH)
-
 
 .PHONY: proto
 proto:
@@ -8,7 +6,6 @@ proto:
 
 .PHONY: build
 build: proto
-
 	go build -o auth-srv *.go
 
 .PHONY: test

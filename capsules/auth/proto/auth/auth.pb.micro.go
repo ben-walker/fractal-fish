@@ -34,9 +34,7 @@ var _ server.Option
 // Client API for Auth service
 
 type AuthService interface {
-	Call(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
-	Stream(ctx context.Context, in *StreamingRequest, opts ...client.CallOption) (Auth_StreamService, error)
-	PingPong(ctx context.Context, opts ...client.CallOption) (Auth_PingPongService, error)
+	Check(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
 }
 
 type authService struct {
@@ -57,8 +55,8 @@ func NewAuthService(name string, c client.Client) AuthService {
 	}
 }
 
-func (c *authService) Call(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
-	req := c.c.NewRequest(c.name, "Auth.Call", in)
+func (c *authService) Check(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
+	req := c.c.NewRequest(c.name, "Auth.Check", in)
 	out := new(Response)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
@@ -67,109 +65,15 @@ func (c *authService) Call(ctx context.Context, in *Request, opts ...client.Call
 	return out, nil
 }
 
-func (c *authService) Stream(ctx context.Context, in *StreamingRequest, opts ...client.CallOption) (Auth_StreamService, error) {
-	req := c.c.NewRequest(c.name, "Auth.Stream", &StreamingRequest{})
-	stream, err := c.c.Stream(ctx, req, opts...)
-	if err != nil {
-		return nil, err
-	}
-	if err := stream.Send(in); err != nil {
-		return nil, err
-	}
-	return &authServiceStream{stream}, nil
-}
-
-type Auth_StreamService interface {
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Recv() (*StreamingResponse, error)
-}
-
-type authServiceStream struct {
-	stream client.Stream
-}
-
-func (x *authServiceStream) Close() error {
-	return x.stream.Close()
-}
-
-func (x *authServiceStream) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *authServiceStream) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *authServiceStream) Recv() (*StreamingResponse, error) {
-	m := new(StreamingResponse)
-	err := x.stream.Recv(m)
-	if err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *authService) PingPong(ctx context.Context, opts ...client.CallOption) (Auth_PingPongService, error) {
-	req := c.c.NewRequest(c.name, "Auth.PingPong", &Ping{})
-	stream, err := c.c.Stream(ctx, req, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return &authServicePingPong{stream}, nil
-}
-
-type Auth_PingPongService interface {
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Send(*Ping) error
-	Recv() (*Pong, error)
-}
-
-type authServicePingPong struct {
-	stream client.Stream
-}
-
-func (x *authServicePingPong) Close() error {
-	return x.stream.Close()
-}
-
-func (x *authServicePingPong) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *authServicePingPong) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *authServicePingPong) Send(m *Ping) error {
-	return x.stream.Send(m)
-}
-
-func (x *authServicePingPong) Recv() (*Pong, error) {
-	m := new(Pong)
-	err := x.stream.Recv(m)
-	if err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
 // Server API for Auth service
 
 type AuthHandler interface {
-	Call(context.Context, *Request, *Response) error
-	Stream(context.Context, *StreamingRequest, Auth_StreamStream) error
-	PingPong(context.Context, Auth_PingPongStream) error
+	Check(context.Context, *Request, *Response) error
 }
 
 func RegisterAuthHandler(s server.Server, hdlr AuthHandler, opts ...server.HandlerOption) error {
 	type auth interface {
-		Call(ctx context.Context, in *Request, out *Response) error
-		Stream(ctx context.Context, stream server.Stream) error
-		PingPong(ctx context.Context, stream server.Stream) error
+		Check(ctx context.Context, in *Request, out *Response) error
 	}
 	type Auth struct {
 		auth
@@ -182,81 +86,6 @@ type authHandler struct {
 	AuthHandler
 }
 
-func (h *authHandler) Call(ctx context.Context, in *Request, out *Response) error {
-	return h.AuthHandler.Call(ctx, in, out)
-}
-
-func (h *authHandler) Stream(ctx context.Context, stream server.Stream) error {
-	m := new(StreamingRequest)
-	if err := stream.Recv(m); err != nil {
-		return err
-	}
-	return h.AuthHandler.Stream(ctx, m, &authStreamStream{stream})
-}
-
-type Auth_StreamStream interface {
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Send(*StreamingResponse) error
-}
-
-type authStreamStream struct {
-	stream server.Stream
-}
-
-func (x *authStreamStream) Close() error {
-	return x.stream.Close()
-}
-
-func (x *authStreamStream) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *authStreamStream) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *authStreamStream) Send(m *StreamingResponse) error {
-	return x.stream.Send(m)
-}
-
-func (h *authHandler) PingPong(ctx context.Context, stream server.Stream) error {
-	return h.AuthHandler.PingPong(ctx, &authPingPongStream{stream})
-}
-
-type Auth_PingPongStream interface {
-	SendMsg(interface{}) error
-	RecvMsg(interface{}) error
-	Close() error
-	Send(*Pong) error
-	Recv() (*Ping, error)
-}
-
-type authPingPongStream struct {
-	stream server.Stream
-}
-
-func (x *authPingPongStream) Close() error {
-	return x.stream.Close()
-}
-
-func (x *authPingPongStream) SendMsg(m interface{}) error {
-	return x.stream.Send(m)
-}
-
-func (x *authPingPongStream) RecvMsg(m interface{}) error {
-	return x.stream.Recv(m)
-}
-
-func (x *authPingPongStream) Send(m *Pong) error {
-	return x.stream.Send(m)
-}
-
-func (x *authPingPongStream) Recv() (*Ping, error) {
-	m := new(Ping)
-	if err := x.stream.Recv(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+func (h *authHandler) Check(ctx context.Context, in *Request, out *Response) error {
+	return h.AuthHandler.Check(ctx, in, out)
 }

@@ -1,3 +1,3 @@
 FROM alpine
-ADD hashit-srv /hashit-srv
-ENTRYPOINT [ "/hashit-srv" ]
+ADD hashit.srv /hashit.srv
+ENTRYPOINT [ "/hashit.srv" ]

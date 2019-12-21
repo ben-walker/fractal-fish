@@ -1,6 +1,4 @@
-
 GOPATH:=$(shell go env GOPATH)
-
 
 .PHONY: proto
 proto:
@@ -8,8 +6,7 @@ proto:
 
 .PHONY: build
 build: proto
-
-	go build -o hashit-srv *.go
+	go build -o hashit.srv *.go
 
 .PHONY: test
 test:
@@ -17,4 +14,4 @@ test:
 
 .PHONY: docker
 docker:
-	docker build . -t hashit-srv:latest
+	docker build . -t hashit.srv:latest

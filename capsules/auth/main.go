@@ -2,16 +2,18 @@ package main
 
 import (
 	"auth/handler"
-	auth "auth/proto/auth"
 	"auth/subscriber"
+
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/util/log"
+
+	auth "auth/proto/auth"
 )
 
 func main() {
 	service := micro.NewService(
 		micro.Name("go.micro.srv.auth"),
-		micro.Version("latest"),
+		micro.Version("0.0.0"),
 	)
 	service.Init()
 

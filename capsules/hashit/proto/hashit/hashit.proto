@@ -11,5 +11,5 @@ message Request {
 }
 
 message Response {
-	string hashed = 1;
+	string hash = 1;
 }

@@ -18,17 +18,17 @@ type Params struct {
 }
 
 // GenerateHash produces a hashed version of a plain string
-func GenerateHash(plain string, p *Params) (string, error) {
+func GenerateHash(plain string, p *Params) (encodedHash string, err error) {
 	salt, err := generateBytes(p.SaltLength)
 	if err != nil {
 		return "", err
 	}
 	hash := argon2.IDKey([]byte(plain), salt, p.Iterations, p.Memory, p.Parallelism, p.KeyLength)
-	encodedHash := encodeHash(salt, hash, p)
+	encodedHash = encode(salt, hash, p)
 	return encodedHash, nil
 }
 
-func encodeHash(salt, hash []byte, p *Params) string {
+func encode(salt, hash []byte, p *Params) string {
 	b64Salt := bytesToBase64(salt)
 	b64Hash := bytesToBase64(hash)
 	encoded := fmt.Sprintf("$argon2id$v=%d$m=%d,t=%d,p=%d$%s$%s", argon2.Version, p.Memory, p.Iterations, p.Parallelism, b64Salt, b64Hash)
@@ -40,8 +40,8 @@ func bytesToBase64(b []byte) string {
 	return b64
 }
 
-func generateBytes(n uint32) ([]byte, error) {
-	bytes := make([]byte, n)
+func generateBytes(n uint32) (bytes []byte, err error) {
+	bytes = make([]byte, n)
 	if _, err := rand.Read(bytes); err != nil {
 		return nil, err
 	}

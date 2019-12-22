@@ -28,7 +28,7 @@ func GenerateHash(plain string, p *Params) (string, error) {
 	return encodedHash, nil
 }
 
-func encodeHash(salt []byte, hash []byte, p *Params) string {
+func encodeHash(salt, hash []byte, p *Params) string {
 	b64Salt := bytesToBase64(salt)
 	b64Hash := bytesToBase64(hash)
 	encoded := fmt.Sprintf("$argon2id$v=%d$m=%d,t=%d,p=%d$%s$%s", argon2.Version, p.Memory, p.Iterations, p.Parallelism, b64Salt, b64Hash)

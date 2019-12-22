@@ -17,7 +17,7 @@ type Params struct {
 	KeyLength   uint32
 }
 
-// GenerateHash produces a hashed version of plain string
+// GenerateHash produces a hashed version of a plain string
 func GenerateHash(plain string, p *Params) (string, error) {
 	salt, err := generateBytes(p.SaltLength)
 	if err != nil {

@@ -35,6 +35,7 @@ var _ server.Option
 
 type HashitService interface {
 	Encode(ctx context.Context, in *EncodeRequest, opts ...client.CallOption) (*EncodeResponse, error)
+	Compare(ctx context.Context, in *CompareRequest, opts ...client.CallOption) (*CompareResponse, error)
 }
 
 type hashitService struct {
@@ -65,15 +66,27 @@ func (c *hashitService) Encode(ctx context.Context, in *EncodeRequest, opts ...c
 	return out, nil
 }
 
+func (c *hashitService) Compare(ctx context.Context, in *CompareRequest, opts ...client.CallOption) (*CompareResponse, error) {
+	req := c.c.NewRequest(c.name, "Hashit.Compare", in)
+	out := new(CompareResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for Hashit service
 
 type HashitHandler interface {
 	Encode(context.Context, *EncodeRequest, *EncodeResponse) error
+	Compare(context.Context, *CompareRequest, *CompareResponse) error
 }
 
 func RegisterHashitHandler(s server.Server, hdlr HashitHandler, opts ...server.HandlerOption) error {
 	type hashit interface {
 		Encode(ctx context.Context, in *EncodeRequest, out *EncodeResponse) error
+		Compare(ctx context.Context, in *CompareRequest, out *CompareResponse) error
 	}
 	type Hashit struct {
 		hashit
@@ -88,4 +101,8 @@ type hashitHandler struct {
 
 func (h *hashitHandler) Encode(ctx context.Context, in *EncodeRequest, out *EncodeResponse) error {
 	return h.HashitHandler.Encode(ctx, in, out)
+}
+
+func (h *hashitHandler) Compare(ctx context.Context, in *CompareRequest, out *CompareResponse) error {
+	return h.HashitHandler.Compare(ctx, in, out)
 }

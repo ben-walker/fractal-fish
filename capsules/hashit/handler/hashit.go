@@ -26,3 +26,8 @@ func (e *Hashit) Encode(ctx context.Context, req *hashit.EncodeRequest, rsp *has
 	rsp.EncodedHash = hash
 	return nil
 }
+
+// Compare determines whether an unhashed value matches an encoded hash
+func (e *Hashit) Compare(ctx context.Context, req *hashit.CompareRequest, rsp *hashit.CompareResponse) error {
+	return nil
+}

@@ -3,15 +3,15 @@ package handler
 import (
 	"context"
 
-	"hashit/lib"
+	hasher "hashit/lib"
 	hashit "hashit/proto/hashit"
 )
 
 // Hashit implements the RPC service
 type Hashit struct{}
 
-// Crypt is a single request handler called via client.Call or the generated client code
-func (e *Hashit) Crypt(ctx context.Context, req *hashit.Request, rsp *hashit.Response) error {
+// Encode is a single request handler called via client.Call or the generated client code
+func (e *Hashit) Encode(ctx context.Context, req *hashit.EncodeRequest, rsp *hashit.EncodeResponse) error {
 	p := &hasher.Params{
 		Memory:      64 * 1024,
 		Iterations:  3,
@@ -23,6 +23,6 @@ func (e *Hashit) Crypt(ctx context.Context, req *hashit.Request, rsp *hashit.Res
 	if err != nil {
 		return err
 	}
-	rsp.Hash = hash
+	rsp.EncodedHash = hash
 	return nil
 }

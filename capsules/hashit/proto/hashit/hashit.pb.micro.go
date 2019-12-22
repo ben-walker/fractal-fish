@@ -34,7 +34,7 @@ var _ server.Option
 // Client API for Hashit service
 
 type HashitService interface {
-	Crypt(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
+	Encode(ctx context.Context, in *EncodeRequest, opts ...client.CallOption) (*EncodeResponse, error)
 }
 
 type hashitService struct {
@@ -55,9 +55,9 @@ func NewHashitService(name string, c client.Client) HashitService {
 	}
 }
 
-func (c *hashitService) Crypt(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
-	req := c.c.NewRequest(c.name, "Hashit.Crypt", in)
-	out := new(Response)
+func (c *hashitService) Encode(ctx context.Context, in *EncodeRequest, opts ...client.CallOption) (*EncodeResponse, error) {
+	req := c.c.NewRequest(c.name, "Hashit.Encode", in)
+	out := new(EncodeResponse)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -68,12 +68,12 @@ func (c *hashitService) Crypt(ctx context.Context, in *Request, opts ...client.C
 // Server API for Hashit service
 
 type HashitHandler interface {
-	Crypt(context.Context, *Request, *Response) error
+	Encode(context.Context, *EncodeRequest, *EncodeResponse) error
 }
 
 func RegisterHashitHandler(s server.Server, hdlr HashitHandler, opts ...server.HandlerOption) error {
 	type hashit interface {
-		Crypt(ctx context.Context, in *Request, out *Response) error
+		Encode(ctx context.Context, in *EncodeRequest, out *EncodeResponse) error
 	}
 	type Hashit struct {
 		hashit
@@ -86,6 +86,6 @@ type hashitHandler struct {
 	HashitHandler
 }
 
-func (h *hashitHandler) Crypt(ctx context.Context, in *Request, out *Response) error {
-	return h.HashitHandler.Crypt(ctx, in, out)
+func (h *hashitHandler) Encode(ctx context.Context, in *EncodeRequest, out *EncodeResponse) error {
+	return h.HashitHandler.Encode(ctx, in, out)
 }

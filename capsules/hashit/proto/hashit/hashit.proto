@@ -3,13 +3,13 @@ syntax = "proto3";
 package go.micro.srv.hashit;
 
 service Hashit {
-	rpc Crypt(Request) returns (Response) {}
+	rpc Encode(EncodeRequest) returns (EncodeResponse) {}
 }
 
-message Request {
+message EncodeRequest {
 	string value = 1;
 }
 
-message Response {
-	string hash = 1;
+message EncodeResponse {
+	string encoded_hash = 1;
 }

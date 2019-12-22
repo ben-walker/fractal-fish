@@ -29,5 +29,10 @@ func (e *Hashit) Encode(ctx context.Context, req *hashit.EncodeRequest, rsp *has
 
 // Compare determines whether an unhashed value matches an encoded hash
 func (e *Hashit) Compare(ctx context.Context, req *hashit.CompareRequest, rsp *hashit.CompareResponse) error {
+	match, err := hasher.TestHashMatch(req.Value, req.EncodedHash)
+	if err != nil {
+		return err
+	}
+	rsp.Match = match
 	return nil
 }

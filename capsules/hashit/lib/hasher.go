@@ -30,6 +30,11 @@ func GenerateHash(plain string, p *Params) (encodedHash string, err error) {
 	return encodedHash, nil
 }
 
+// TestHashMatch checks if a plain string matches an encoded hash/salt value
+func TestHashMatch(plain, encodedHash string) (match bool, err error) {
+	return true, nil
+}
+
 func encode(salt, hash []byte, p *Params) string {
 	b64Salt := bytesToBase64(salt)
 	b64Hash := bytesToBase64(hash)

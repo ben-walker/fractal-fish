@@ -8,6 +8,8 @@ import (
 	"golang.org/x/crypto/argon2"
 )
 
+const encodingFormat = "$argon2id$v=%d$m=%d,t=%d,p=%d$%s$%s"
+
 // Params passed to argon2
 type Params struct {
 	Memory      uint32
@@ -31,7 +33,7 @@ func GenerateHash(plain string, p *Params) (encodedHash string, err error) {
 func encode(salt, hash []byte, p *Params) string {
 	b64Salt := bytesToBase64(salt)
 	b64Hash := bytesToBase64(hash)
-	encoded := fmt.Sprintf("$argon2id$v=%d$m=%d,t=%d,p=%d$%s$%s", argon2.Version, p.Memory, p.Iterations, p.Parallelism, b64Salt, b64Hash)
+	encoded := fmt.Sprintf(encodingFormat, argon2.Version, p.Memory, p.Iterations, p.Parallelism, b64Salt, b64Hash)
 	return encoded
 }
 

@@ -43,8 +43,7 @@ func encode(salt, hash []byte, p *Params) string {
 }
 
 func bytesToBase64(b []byte) string {
-	b64 := base64.RawStdEncoding.EncodeToString(b)
-	return b64
+	return base64.RawStdEncoding.EncodeToString(b)
 }
 
 func generateBytes(n uint32) (bytes []byte, err error) {

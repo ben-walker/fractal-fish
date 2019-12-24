@@ -15,7 +15,6 @@ var hashParameters = &hash.Params{
 	Iterations:  3,
 	Parallelism: 2,
 	SaltLength:  16,
-	KeyLength:   32,
 }
 
 // Encode is a single request handler called via client.Call or the generated client code

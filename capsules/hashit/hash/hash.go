@@ -32,11 +32,6 @@ func GenerateHash(plain string, p *Params) (encodedHash string, err error) {
 	return encodedHash, nil
 }
 
-// TestHashMatch checks if a plain string matches an encoded hash/salt value
-func TestHashMatch(plain, encodedHash string) (match bool, err error) {
-	return true, nil
-}
-
 func generateSalt(n int) (string, error) {
 	bytes := make([]byte, n)
 	if _, err := rand.Read(bytes); err != nil {
@@ -47,4 +42,9 @@ func generateSalt(n int) (string, error) {
 
 func bytesToString(b []byte) string {
 	return base64.RawStdEncoding.EncodeToString(b)
+}
+
+// TestHashMatch checks if a plain string matches an encoded hash/salt value
+func TestHashMatch(plain, encodedHash string) (match bool, err error) {
+	return true, nil
 }

@@ -44,7 +44,7 @@ func bytesToString(b []byte) string {
 	return base64.RawStdEncoding.EncodeToString(b)
 }
 
-// TestHashMatch checks if a plain string matches an encoded hash/salt value
-func TestHashMatch(plain, encodedHash string) (match bool, err error) {
+// WasHashed checks if a plain value was used in an encoded hash
+func WasHashed(value, encodedHash string) (match bool, err error) {
 	return true, nil
 }

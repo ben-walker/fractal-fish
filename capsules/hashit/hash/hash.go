@@ -2,6 +2,7 @@ package hasher
 
 import (
 	"crypto/rand"
+	"crypto/subtle"
 	"encoding/base64"
 
 	"github.com/simia-tech/crypt"
@@ -46,5 +47,15 @@ func bytesToString(b []byte) string {
 
 // WasHashed checks if a plain value was used in an encoded hash
 func WasHashed(value, encodedHash string) (match bool, err error) {
-	return true, nil
+	newHash, err := crypt.Crypt(value, encodedHash) // Use the original hash as a settings string
+	if err != nil {
+		return false, err
+	}
+	hashBytes, newHashBytes := []byte(encodedHash), []byte(newHash)
+	isLenEqual := subtle.ConstantTimeEq(int32(len(hashBytes)), int32(len(newHashBytes))) == 1
+	if !isLenEqual {
+		return false, nil
+	}
+	isContentEqual := subtle.ConstantTimeCompare(hashBytes, newHashBytes) == 1
+	return isContentEqual, nil
 }

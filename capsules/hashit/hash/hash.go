@@ -21,12 +21,10 @@ func GenerateHash(plain string, p *Params) (encodedHash string, err error) {
 	if err != nil {
 		return "", err
 	}
-
 	settings, err := crypt.Argon2idSettings(p.Memory, p.Iterations, p.Parallelism, salt)
 	if err != nil {
 		return "", err
 	}
-
 	encodedHash, err = crypt.Crypt(plain, settings)
 	if err != nil {
 		return "", err
@@ -44,9 +42,9 @@ func generateSalt(n int) (string, error) {
 	if _, err := rand.Read(bytes); err != nil {
 		return "", err
 	}
-	return bytesToBase64(bytes), nil
+	return bytesToString(bytes), nil
 }
 
-func bytesToBase64(b []byte) string {
+func bytesToString(b []byte) string {
 	return base64.RawStdEncoding.EncodeToString(b)
 }

@@ -1,0 +1,10 @@
+# Generated protobuf code
+proto/*.pb.*
+
+# Build
+Makefile
+*.srv
+
+# Misc
+README.md
+.gitignore

@@ -6,7 +6,7 @@ import (
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/util/log"
 
-	hashit "hashit/proto/hashit"
+	hashit "hashit/proto"
 )
 
 func main() {

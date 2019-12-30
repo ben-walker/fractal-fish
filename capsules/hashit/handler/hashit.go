@@ -4,7 +4,7 @@ import (
 	"context"
 
 	hash "hashit/hash"
-	hashit "hashit/proto/hashit"
+	hashit "hashit/proto"
 )
 
 // Hashit implements the RPC service

@@ -1,2 +1,5 @@
 # Build output
 *.srv
+
+# Generated protobuf code
+*.pb.*

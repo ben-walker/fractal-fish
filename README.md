@@ -16,7 +16,7 @@ A web thing.
 
 ### Microservices
 
-- [hashit](./services/hashit/) (Hashit encodes passwords with argon2, and validates that a plain password matches an encoded hash)
+- [Hashit](./services/hashit/) encodes passwords with argon2, and validates that a plain password matches an encoded hash
 
 ### Archived Packages
 

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package go.micro.srv.hashit;
+
+service Hashit {
+	rpc Encode(EncodeRequest) returns (EncodeResponse) {}
+	rpc Compare(CompareRequest) returns (CompareResponse) {}
+}
+
+message EncodeRequest {
+	string value = 1;
+}
+
+message EncodeResponse {
+	string encoded_hash = 1;
+}
+
+message CompareRequest {
+	string value = 1;
+	string encoded_hash = 2;
+}
+
+message CompareResponse {
+	bool match = 1;
+}

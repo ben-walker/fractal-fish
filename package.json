@@ -11,7 +11,8 @@
   "license": "ISC",
   "bolt": {
     "workspaces": [
-      "capsules/*"
+      "capsules/potential-well",
+      "capsules/strange-charm"
     ]
   },
   "husky": {

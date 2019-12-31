@@ -10,10 +10,7 @@
   },
   "license": "ISC",
   "bolt": {
-    "workspaces": [
-      "capsules/potential-well",
-      "capsules/strange-charm"
-    ]
+    "workspaces": []
   },
   "husky": {
     "hooks": {

@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hashit
+  labels:
+    service: hashit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: hashit
+      micro: service
+  template:
+    metadata:
+      labels:
+        service: hashit
+        micro: service
+    spec:
+      containers:
+      - name: hashit
+        image: hashit
+        env:
+        - name: MICRO_SERVER_ADDRESS
+          value: "0.0.0.0:8080"
+        ports:
+        - containerPort: 8080
+          name: hashit-port

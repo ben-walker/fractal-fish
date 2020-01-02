@@ -14,4 +14,4 @@ test:
 
 .PHONY: docker
 docker:
-	docker build . -t hashit.srv:latest
+	docker build . -t hashit:latest

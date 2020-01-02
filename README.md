@@ -8,9 +8,10 @@ A web thing.
 
 > **Bold** items are final (maybe, probably).
 
-| Problem Area    | Solution                                          |
+| Problem Area | Solution |
 | --------------- | ------------------------------------------------- |
-| Continuous Integration | **[CircleCI](https://circleci.com/docs)**  |
+| Continuous Integration | **[CircleCI](https://circleci.com/docs)** |
+| Image Builds | **[Skaffold](https://github.com/GoogleContainerTools/skaffold)** |
 
 ## Monorepo Layout
 

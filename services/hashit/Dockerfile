@@ -23,7 +23,6 @@ RUN go get github.com/micro/protoc-gen-micro && \
 RUN mkdir -p /proto && \
   chown compiler:compiler /proto
 USER compiler
-RUN who
 WORKDIR /proto
 COPY proto/*.proto ./
 

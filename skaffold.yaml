@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2alpha1
+kind: Config
+metadata:
+  name: fractal-fish
+build:
+  artifacts:
+  - image: hashit
+    context: services/hashit
+deploy:
+  kubectl:
+    manifests:
+    - services/hashit/k8s/hashit.yaml

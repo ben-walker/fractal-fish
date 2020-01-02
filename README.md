@@ -20,7 +20,7 @@ A web thing.
 
 ### Archived Packages
 
-- [outer-space](./archived-capsules/outer-space/) (Express/GraphQL backend) - **Deprecated**
-- [moon-dust](./archived-capsules/moon-dust/) (React frontend) - **Deprecated**
-- [potential-well](./archived-capsules/potential-well) (Koa server) - **Deprecated**
-- [strange-charm](./archived-capsules/strange-charm) (Vue SSR frontend) - **Deprecated**
+- [outer-space](./archived/outer-space/) (Express/GraphQL backend) - **Deprecated**
+- [moon-dust](./archived/moon-dust/) (React frontend) - **Deprecated**
+- [potential-well](./archived/potential-well) (Koa server) - **Deprecated**
+- [strange-charm](./archived/strange-charm) (Vue SSR frontend) - **Deprecated**

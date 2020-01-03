@@ -1,7 +1,5 @@
 # Hashit Service
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/ben-walker/fractal-fish)](https://goreportcard.com/report/github.com/ben-walker/fractal-fish)
-
 This is the Hashit service
 
 Generated with

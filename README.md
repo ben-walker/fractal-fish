@@ -6,8 +6,6 @@ A web thing.
 
 ## Technology
 
-> **Bold** items are final (maybe, probably).
-
 | Problem Area | Solution |
 | --------------- | ------------------------------------------------- |
 | Continuous Integration | **[CircleCI](https://circleci.com/docs)** |
@@ -18,6 +16,7 @@ A web thing.
 ### Microservices
 
 - [Hashit](./services/hashit/) encodes passwords with argon2, and validates that a plain password matches an encoded hash
+- [Auth](./services/auth) performs user authentication, and makes use of the Hashit service
 
 ### Archived Packages
 

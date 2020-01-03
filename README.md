@@ -13,12 +13,12 @@ A web thing.
 
 ## Monorepo Layout
 
-### Microservices
+### Microservices ([services/](./services))
 
 - [Hashit](./services/hashit/) encodes passwords with argon2, and validates that a plain password matches an encoded hash
 - [Auth](./services/auth) performs user authentication, and makes use of the Hashit service
 
-### Archived Packages
+### Archived Packages ([archived/](./archived))
 
 - [outer-space](./archived/outer-space/) (Express/GraphQL backend) - **Deprecated**
 - [moon-dust](./archived/moon-dust/) (React frontend) - **Deprecated**

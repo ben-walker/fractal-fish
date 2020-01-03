@@ -1,3 +1,9 @@
 # Editor directories and files
 .DS_Store
 .vscode
+
+# Build output
+*.srv
+
+# Generated protobuf code
+*.pb.*

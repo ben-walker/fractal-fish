@@ -6,7 +6,10 @@ build:
   artifacts:
   - image: hashit
     context: services/hashit
+  - image: auth
+    context: services/auth
 deploy:
   kubectl:
     manifests:
     - services/hashit/k8s/hashit.yaml
+    - services/auth/k8s/auth.yaml

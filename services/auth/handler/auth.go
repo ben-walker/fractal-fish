@@ -5,9 +5,10 @@ import (
 
 	"github.com/micro/go-micro/util/log"
 
-	auth "auth/proto/auth"
+	auth "auth/proto"
 )
 
+// Auth implements the RPC service
 type Auth struct{}
 
 // Call is a single request handler called via client.Call or the generated client code

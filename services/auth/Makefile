@@ -1,15 +1,12 @@
-
 GOPATH:=$(shell go env GOPATH)
-
 
 .PHONY: proto
 proto:
-	protoc --proto_path=${GOPATH}/src:. --micro_out=. --go_out=. proto/auth/auth.proto
+	protoc --proto_path=${GOPATH}/src:. --micro_out=. --go_out=. proto/*.proto
 
 .PHONY: build
 build: proto
-
-	go build -o auth-srv *.go
+	go build -o auth.srv *.go
 
 .PHONY: test
 test:
@@ -17,4 +14,4 @@ test:
 
 .PHONY: docker
 docker:
-	docker build . -t auth-srv:latest
+	docker build . -t auth:latest

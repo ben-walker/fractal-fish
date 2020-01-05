@@ -29,8 +29,10 @@ COPY proto/*.proto ./
 # Generate protobuf code
 RUN protoc --proto_path=$GOPATH/src:. --micro_out=. --go_out=. *.proto
 
-###### Create Dependency Layer ######
-FROM golang:latest
+###### Build Binary ######
+FROM golang:latest as binary
+
+ENV GO111MODULE=on
 
 WORKDIR /app
 
@@ -38,18 +40,18 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 
-###### Build Service Image ######
-FROM golang:latest
-
-ENV GO111MODULE=on
-
-WORKDIR /app
-
 COPY . .
 
 COPY --from=protocomp /proto/*.go ./proto/
 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-w' -i -o micro *.go
+
+###### Expose App ######
+FROM scratch
+
+WORKDIR /app
+
+COPY --from=binary /app/micro .
 
 EXPOSE 8080
 

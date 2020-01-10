@@ -1,4 +1,4 @@
-FROM golang:1.13.6-buster as protocomp
+FROM golang:1.13-buster
 
 # Install sudo, add user 'compiler' to sudoers group
 RUN apt-get update && \

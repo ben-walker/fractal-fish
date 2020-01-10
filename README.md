@@ -1,5 +1,7 @@
 # Fractal Fish
 
+[![CircleCI](https://circleci.com/gh/ben-walker/fractal-fish.svg?style=svg)](https://circleci.com/gh/ben-walker/fractal-fish)
+
 ## Overview
 
 A web thing.

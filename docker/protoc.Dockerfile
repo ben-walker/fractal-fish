@@ -1,4 +1,4 @@
-FROM golang:1.13.6-alpine3.11 as protocomp
+FROM golang:1.13-alpine as protocomp
 
 # Install sudo, add user 'compiler' to sudoers group
 RUN apt-get update && \

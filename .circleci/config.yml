@@ -10,6 +10,10 @@ jobs:
       - setup_remote_docker
       - checkout
       - docker/check
+      - docker/build:
+        image: fractalfish/proto-comp
+        path: docker/
+        dockerfile: proto-comp.dockerfile
 
 workflows:
   commit:

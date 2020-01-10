@@ -1,3 +1,5 @@
+# Protoc is an image containing all the tools needed to compile
+# protobuf files for go-micro consumption
 FROM golang:1.13-buster
 
 # Install sudo, add user 'compiler' to sudoers group

@@ -4,20 +4,20 @@ orbs:
   docker: circleci/docker@0.5.20
 
 jobs:
-  build-proto-comp:
+  build-protoc:
     executor: docker/docker
     steps:
       - setup_remote_docker
       - checkout
       - docker/check
       - docker/build:
-          image: fractalfish/proto-comp
+          image: fractalfish/protoc
           path: docker/
-          dockerfile: proto-comp.dockerfile
+          dockerfile: protoc.Dockerfile
       - docker/push:
-          image: fractalfish/proto-comp
+          image: fractalfish/protoc
 
 workflows:
   commit:
     jobs:
-      - build-proto-comp
+      - build-protoc

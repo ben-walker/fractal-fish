@@ -1,8 +1,8 @@
-FROM golang:1.13-alpine as protocomp
+FROM golang:1.13.6-buster as protocomp
 
 # Install sudo, add user 'compiler' to sudoers group
-RUN apk update && \
-  apk add --no-cache sudo unzip && \
+RUN apt-get update && \
+  apt-get -y install sudo unzip && \
   useradd -m compiler && \
   echo "compiler:compiler" | chpasswd && \
   adduser compiler sudo

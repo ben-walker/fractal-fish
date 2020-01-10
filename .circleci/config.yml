@@ -12,7 +12,6 @@ jobs:
       - docker/check
       - docker/build:
           image: fractalfish/protoc
-          # path: docker/
           dockerfile: docker/protoc.Dockerfile
       - docker/push:
           image: fractalfish/protoc

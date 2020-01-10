@@ -1,8 +1,8 @@
 FROM golang:1.13-alpine as protocomp
 
 # Install sudo, add user 'compiler' to sudoers group
-RUN apt-get update && \
-  apt-get -y install sudo unzip && \
+RUN apk update && \
+  apk add --no-cache sudo unzip && \
   useradd -m compiler && \
   echo "compiler:compiler" | chpasswd && \
   adduser compiler sudo

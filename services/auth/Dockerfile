@@ -1,11 +1,14 @@
 ###### Compile Protobuf Code ######
-FROM fractalfish/protoc:4f1e1beb7fa1ab50b4993dd0e831707692346a99 as protocomp
+FROM golang:1.13-alpine as protocomp
 
 WORKDIR /proto
 
 COPY proto/*.proto ./
 
-RUN protoc --proto_path=$GOPATH/src:. --micro_out=. --go_out=. *.proto
+RUN apk add --no-cache protoc git && \
+  go get github.com/micro/protoc-gen-micro && \
+  go get github.com/golang/protobuf/protoc-gen-go && \
+  protoc --proto_path=$GOPATH/src:. --micro_out=. --go_out=. *.proto
 
 ###### Build Binary ######
 FROM golang:1.13-alpine as builder

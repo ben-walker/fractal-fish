@@ -9,17 +9,6 @@ orbs:
   docker: circleci/docker@0.5.20
 
 jobs:
-  build-protoc:
-    executor: docker/docker
-    steps:
-    - setup_remote_docker
-    - checkout
-    - docker/check
-    - docker/build:
-        image: fractalfish/protoc
-        dockerfile: docker/protoc.Dockerfile
-    - docker/push:
-        image: fractalfish/protoc
   build-skaffold:
     executor: docker/docker
     steps:
@@ -43,6 +32,5 @@ jobs:
 workflows:
   commit:
     jobs:
-    - build-protoc
     - build-skaffold
     - deploy

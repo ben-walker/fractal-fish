@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: hashit
-        image: hashit
+        image: fractalfish/hashit
         env:
         - name: MICRO_SERVER_ADDRESS
           value: "0.0.0.0:8080"

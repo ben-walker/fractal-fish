@@ -5,13 +5,22 @@ metadata:
 
 build:
   artifacts:
-  - image: hashit
+  - image: fractalfish/hashit
     context: services/hashit
-  - image: auth
+  - image: fractalfish/auth
     context: services/auth
+  local:
+    push: false
 
 deploy:
   kubectl:
     manifests:
     - services/hashit/k8s/hashit.yaml
     - services/auth/k8s/auth.yaml
+
+profiles:
+- name: push
+  patches:
+  - op: replace
+    path: /build/local/push
+    value: true

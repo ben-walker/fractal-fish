@@ -22,8 +22,8 @@ jobs:
       - checkout
       - docker/check
       - run:
-        command: |
-          skaffold build -p push
+          command: |
+            skaffold build -p push
 
 workflows:
   commit:

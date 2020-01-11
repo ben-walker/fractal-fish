@@ -1,5 +1,10 @@
 version: 2.1
 
+executors:
+  skaffold:
+    docker:
+    - image: gcr.io/k8s-skaffold/skaffold:latest
+
 orbs:
   docker: circleci/docker@0.5.20
 
@@ -16,11 +21,10 @@ jobs:
       - docker/push:
           image: fractalfish/protoc
   deploy:
-    executor: docker/docker
+    executor: skaffold
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check
       - run:
           command: |
             skaffold build -p push

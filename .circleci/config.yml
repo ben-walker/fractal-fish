@@ -26,7 +26,9 @@ jobs:
     - setup_remote_docker
     - checkout
     - run:
+        name: Deploy Images with Skaffold
         command: |
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_LOGIN --password-stdin
           skaffold build -p push
 
 workflows:

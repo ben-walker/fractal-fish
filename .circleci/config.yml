@@ -15,8 +15,18 @@ jobs:
           dockerfile: docker/protoc.Dockerfile
       - docker/push:
           image: fractalfish/protoc
+  deploy:
+    executor: docker/docker
+    steps:
+      - setup_remote_docker
+      - checkout
+      - docker/check
+      - run:
+        command: |
+          skaffold build -p push
 
 workflows:
   commit:
     jobs:
       - build-protoc
+      - deploy

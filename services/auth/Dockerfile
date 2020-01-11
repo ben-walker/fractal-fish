@@ -8,7 +8,7 @@ COPY proto/*.proto ./
 RUN protoc --proto_path=$GOPATH/src:. --micro_out=. --go_out=. *.proto
 
 ###### Build Binary ######
-FROM golang:1.13-buster as builder
+FROM golang:1.13-alpine as builder
 
 WORKDIR /app
 

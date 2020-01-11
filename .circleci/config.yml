@@ -9,6 +9,7 @@ orbs:
   docker: circleci/docker@0.5.20
 
 jobs:
+
   build-skaffold:
     executor: docker/docker
     steps:
@@ -20,6 +21,7 @@ jobs:
         dockerfile: docker/skaffold.Dockerfile
     - docker/push:
         image: fractalfish/skaffold
+
   deploy:
     executor: skaffold
     steps:

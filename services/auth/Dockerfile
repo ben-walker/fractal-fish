@@ -1,5 +1,5 @@
 ###### Compile Protobuf Code ######
-FROM fractalfish/protoc:7d3878df3584936b93c455fc00d1f4551e4ffb20 as protocomp
+FROM fractalfish/protoc:4f1e1beb7fa1ab50b4993dd0e831707692346a99 as protocomp
 
 WORKDIR /proto
 

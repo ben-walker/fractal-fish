@@ -3,7 +3,7 @@ version: 2.1
 executors:
   skaffold:
     docker:
-    - image: fractalfish/skaffold:b69a066a1079b5a48095e7f5d2b4653620baf2bf
+    - image: fractalfish/skaffold:e05fa7f8cdcc1f836d04a72ed2294d575d36d25c
 
 orbs:
   docker: circleci/docker@0.5.20
@@ -28,8 +28,8 @@ jobs:
     - setup_remote_docker
     - checkout
     - run:
-        name: Install Docker client
-        command: apk add --no-cache docker-cli
+        name: Install Docker client and git
+        command: apk add --no-cache docker-cli git
     - run:
         name: Deploy images with Skaffold
         command: |

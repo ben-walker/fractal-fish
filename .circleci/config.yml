@@ -3,7 +3,7 @@ version: 2.1
 executors:
   skaffold:
     docker:
-    - image: fractalfish/skaffold:dc732c14a1281bc80c3118fa4b3b37a1dad39501
+    - image: fractalfish/skaffold:b69a066a1079b5a48095e7f5d2b4653620baf2bf
 
 orbs:
   docker: circleci/docker@0.5.20

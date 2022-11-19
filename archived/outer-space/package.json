@@ -46,7 +46,7 @@
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.7.3",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.12",
     "webpack-merge": "^4.2.2",
     "webpack-node-externals": "^1.7.2",
     "winston-daily-rotate-file": "^4.3.1"
